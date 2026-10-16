@@ -212,7 +212,7 @@ function App() {
 
               <a
                 className="download-button"
-                href="#descarga-build"
+                href="https://github.com/Alein0/AshesOfMind/releases/download/V0.1/AshesOfMind.zip"
               >
                 <span className="download-button-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none">
