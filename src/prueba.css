@@ -1,0 +1,840 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif  "Bell MT";
+  color: #e8e8e5;
+  background: #080b0e;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar {
+  position: absolute;
+  z-index: 2;
+  top: 24px;
+  left: 5%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 24px;
+  border: 1px solid #8eafc233;
+  border-radius: 18px;
+  background: #14232ccc;
+  backdrop-filter: blur(16px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.brand-mark {
+  font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  font-size: 14px;
+  color: #c3cbd0;
+}
+
+.navbar .nav-links {
+  gap: 48px !important;
+  column-gap: 48px !important;
+}
+
+.nav-links a:hover {
+  color: #166AB6;
+}
+
+.hero {
+  position: relative;
+  min-height: 600px;
+  min-height: 85svh;
+  display: flex;
+  align-items: center;
+  padding: 200px 8% 80px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 75% 40%, #27405288 0%, transparent 40%),
+    linear-gradient(90deg, #080b0e 5%, #080b0edb 48%, #080b0e66 100%),
+    #101820;
+}
+
+.hero-logo {
+  display: block;
+  width: min(100%, 540px);
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 24px;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.eyebrow {
+  color: #8eafc2;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  margin: 22px 0;
+  font-size: clamp(42px, 7vw, 88px);
+  line-height: 0.98;
+  letter-spacing: -3px;
+}
+
+.hero h1 span {
+  color: #8eafc2;
+}
+
+.hero-description {
+  max-width: 560px;
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 1.9;
+  margin-bottom: 28px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-top: 28px;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 7px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  width: 220px;
+  height: 50px;
+  padding: 0 14px 0 14px;
+  background: #166AB6;
+  color: white;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  gap: 0;
+}
+
+.button-primary .button-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.button-primary:hover {
+  background: #104e84;
+}
+
+.button-primary .button-text {
+  position: relative;
+  left: 20px;
+}
+
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  color: white;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+
+}
+.play-icon {
+  width: 52px;
+  height: 52px;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.play-triangle {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 12px solid white;
+  margin-left: 4px;
+}
+
+.trailer-text {
+  font-family: "Graphic Psychopathy", sans-serif;
+  font-size: 20px;
+}
+
+.trailer-button:hover .play-icon {
+  transform: scale(1.08);
+}
+
+.hero-caption {
+  position: absolute;
+  right: 6%;
+  bottom: 28px;
+  display: flex;
+  gap: 14px;
+  color: #a5adb2;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.section {
+  padding: 90px 10%;
+}
+
+.section-heading h2 {
+  max-width: 650px;
+  margin: 14px 0;
+  font-size: clamp(27px, 4vw, 45px);
+  line-height: 1.15;
+}
+
+.section-heading > p:last-child {
+  color: #a5adb2;
+  line-height: 1.8;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+  border-top: 1px solid #ffffff12;
+}
+
+.intro-text {
+  color: #b2bbc1;
+  font-size: 15px;
+  line-height: 2;
+}
+
+.universe {
+  background: #0d1216;
+}
+
+.universe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.universe-card {
+  min-height: 210px;
+  padding: 24px;
+  border: 1px solid #8eafc222;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #14232c, #0a0e12);
+}
+
+.card-number {
+  color: #8eafc2;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.universe-card h3 {
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.universe-card p {
+  color: #a5adb2;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.footer {
+  padding: 48px 20px 24px;
+  text-align: center;
+  background: #171719;
+  color: #a5adb2;
+  font-size: 12px;
+}
+
+.footer-brand {
+  color: #e8e8e5;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.copyright {
+  margin-top: 30px;
+  font-size: 10px;
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    top: 12px;
+    left: 4%;
+    width: 92%;
+    padding: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    gap: 14px;
+    font-size: 11px;
+  }
+
+  .hero {
+    min-height: 720px;
+    min-height: 90svh;
+    padding: 160px 7% 90px;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-caption {
+    left: 7%;
+    right: auto;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .section {
+    padding: 65px 7%;
+  }
+
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .universe-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .universe-card {
+    min-height: 180px;
+  }
+
+  .universe-card h3 {
+    margin-top: 35px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+    padding: 12px 16px;
+  }
+
+  .nav-links {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: start;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .cart-link {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
+/* Barra de navegación */
+.navbar,
+.navbar a {
+  font-family: "Bell MT", Georgia, serif;
+}
+
+.navbar .brand {
+  font-family: "Bell MT", Georgia, serif;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+}
+
+.navbar .nav-links {
+  font-family: "Bell MT", Georgia, serif;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+.navbar {
+  position: absolute;
+  top: 24px;
+  left: 5%;
+  width: 90%;
+  min-height: 64px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 10px 24px;
+  gap: 20px;
+  border: 1px solid rgba(142, 175, 194, 0.22);
+  border-radius: 24px;
+  background: rgba(20, 35, 44, 0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.navbar .brand {
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.navbar .brand-logo {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.navbar .brand img.brand-logo {
+  width: 60px !important;
+  height: 60px !important;
+  max-width: none !important;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.navbar .nav-links {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 28px;
+  white-space: nowrap;
+}
+
+.navbar .cart-link {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.navbar .cart-link img {
+  display: block;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    grid-template-columns: 1fr auto;
+    padding: 12px 16px;
+  }
+
+  .navbar .nav-links {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    white-space: normal;
+  }
+}
+
+/* Para textos normales */
+.fuente-texto {
+  font-family: "Bell MT", Georgia, serif;
+}
+
+/* Para títulos */
+.fuente-titulos {
+  font-family: "Graphic Psychopathy", sans-serif;
+}
+
+/* SECCIÓN: VIDEOJUEGO */
+.game-section {
+  position: relative;
+  padding: 50px 2%;
+  background:
+  radial-gradient(ellipse at 75% 30%, #142936 0%, transparent 55%),
+ #080b0e;
+  overflow: hidden;
+}
+
+.game-panel {
+  width: 100%;
+  max-width: 2000px;
+  min-height: 650px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 44px;
+  align-items: center;
+  border: 1px solid rgba(90, 137, 160, 0.25);
+  border-radius: 18px;
+  background: rgba(5, 10, 14, 0.5);
+
+}
+
+.game-intro {
+  min-width: 0;
+}
+
+.game-logo {
+  width: min(100%, 500px);
+  height: auto;
+  margin-bottom: 28px;
+}
+
+.game-description {
+  max-width: 600px;
+  font-size: 25px;
+  margin-bottom: 28px;
+  font-family: "Bell MT", Georgia, serif;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.game-trailer-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 48px;
+  padding: 0 38px 0 12px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 5px;
+  background: #166ab6;
+  color: white;
+  font-family: "Graphic Psychopathy", sans-serif;
+  font-size: 19px;
+  text-decoration: none;
+
+}
+
+.game-trailer-button .game-trailer-icon {
+  position: absolute;
+  right: 50px;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+  transform: none;
+}
+
+.game-trailer-button:hover {
+  background: #104e84;
+}
+
+.game-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+  padding: 16px;
+  border-radius: 28px;
+  background: rgba(4, 8, 11, 0.72);
+  border-radius: 32px;
+}
+
+.game-highlight {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 22px;
+}
+
+.game-image-placeholder {
+  min-height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed rgba(142, 175, 194, 0.4);
+  border-radius: 4px;
+  background:
+    linear-gradient(135deg, #1a2a34, #0b1015);
+  color: #8eafc2;
+  font-family: "Bell MT", Georgia, serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.game-highlight-text h3 {
+  margin: 0 0 12px;
+  color: #f0f0f0;
+  font-family: "Graphic Psychopathy", sans-serif;
+  font-size: 30px;
+  font-weight: normal;
+  margin-bottom: 14px;
+}
+
+.game-highlight-text p {
+  margin: 0;
+  color: #d0d0d0;
+  font-family: "Bell MT", Georgia, serif;
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 800px) {
+  .game-panel {
+    grid-template-columns: 1fr;
+    padding: 24px 18px;
+  }
+
+  .game-highlights {
+    gap: 24px;
+  }
+
+  .game-highlight {
+    grid-template-columns: 1fr;
+  }
+
+  .game-image-placeholder {
+    min-height: 180px;
+  }
+}
+
+
+/* GALERÍA 3D */
+.gallery-section {
+  padding: 64px 6% 72px;
+  background: #080b0e;
+  color: #f0f0f0;
+}
+
+.gallery-header {
+  max-width: 1100px;
+  margin: 0 auto 12px;
+}
+
+.gallery-header h2 {
+  margin: 0 0 12px 24px;
+  font-family: "Graphic Psychopathy", sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+}
+
+.gallery-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(220, 225, 230, 0.7);
+}
+
+.gallery-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 20px 28px 12px;
+}
+
+.gallery-controls button {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #343d43;
+  border-radius: 50%;
+  background: transparent;
+  color: #f0f0f0;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.gallery-controls button:hover {
+  background: #104e84;
+}
+
+.gallery-model-card {
+  max-width: 1000px;
+  min-height: 390px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  overflow: hidden;
+  border: 1px solid #172832;
+  border-radius: 12px;
+  background: #101c23;
+}
+
+.model-viewer-placeholder {
+  min-height: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  background:
+    radial-gradient(ellipse at center, #142630 0%, #080b0e 72%);
+  border-right: 1px solid #172832;
+  text-align: center;
+  position: relative;
+}
+
+.model-placeholder-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.model-tools {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 0;
+}
+
+.model-tools span {
+  padding: 8px 12px;
+  border: 1px solid #34434c;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #aeb9c0;
+  font-family: "Bell MT", Georgia, serif;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.model-placeholder-label {
+  color: #8eafc2;
+  font-family: "Bell MT", Georgia, serif;
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+
+.model-viewer-placeholder p {
+  color: #9ca9b0;
+  font-family: "Bell MT", Georgia, serif;
+  font-size: 16px;
+}
+
+.model-info {
+  padding: 42px 32px;
+  background: #14242d;
+}
+
+.model-category {
+  margin: 0 0 18px;
+  color: #8eafc2;
+  font-family: "Bell MT", Georgia, serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.model-info h3 {
+  margin: 0 0 20px;
+  font-family: "Graphic Psychopathy", sans-serif;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.model-info > p:not(.model-category) {
+  font-family: "Bell MT", Georgia, serif;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #d7dce0;
+}
+
+.model-tools {
+  display: flex;
+  gap: 10px;
+  margin-top: 36px;
+}
+
+.model-tools span {
+  padding: 8px 12px;
+  border: 1px solid #34434c;
+  border-radius: 20px;
+  color: #aeb9c0;
+  font-family: "Bell MT", Georgia, serif;
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  .gallery-section {
+    padding: 44px 5%;
+  }
+
+  .gallery-model-card {
+    grid-template-columns: 1fr;
+  }
+
+  .model-viewer-placeholder {
+    min-height: 300px;
+  }
+
+  .model-info {
+    padding: 28px 24px;
+  }
+}
