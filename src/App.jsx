@@ -93,11 +93,11 @@ function App() {
               />
             </a>
 
-            <a className="button button-secondary" href="https://youtu.be/xlH8TP3dKN8">
+            <a className="button button-secondary" href="#build">
               <span className="play-icon">
                 <span className="play-triangle"></span>
               </span>
-              <span className="trailer-text">Ver tráiler</span>
+              <span className="trailer-text">JUEGA ASHES OF MIND</span>
             </a>
 
           </div>
@@ -254,7 +254,7 @@ function App() {
 
               <a
                 className="download-button"
-                href="https://github.com/Alein0/AshesOfMind/releases/download/V0.1/AshesOfMind.zip"
+                href="https://github.com/Alein0/AshesOfMind/releases/download/V0.2/AshesOfMind.V0.2.zip"
               >
                 <span className="download-button-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none">
