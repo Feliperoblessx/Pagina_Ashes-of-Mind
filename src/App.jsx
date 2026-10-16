@@ -1,13 +1,55 @@
+import { useState } from 'react';
 import './App.css'
+import emailjs from '@emailjs/browser';
+
 
 function App() {
+  const [sending, setSending] = useState(false);
+  const [feedbackMessage, setFeedbackMessage] = useState('');
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const category = formData.get('category');
+    const description = formData.get('description');
+
+    setSending(true);
+    setFeedbackMessage('');
+
+    try {
+      await emailjs.send(
+        '@DRAUGRSTUDIOSMULTIMEDIA',
+        'template_x812ozq',
+        {
+          categoria: category,
+          mensaje: description,
+        },
+        {
+          publicKey: '-Arl0ePp7K1CGvq6m',
+        }
+      );
+
+      setFeedbackMessage('¡Comentario enviado correctamente!');
+      form.reset();
+    } catch (error) {
+      console.error('Error al enviar el comentario:', error);
+      setFeedbackMessage(
+        'No se pudo enviar el comentario. Inténtalo de nuevo.'
+      );
+    } finally {
+      setSending(false);
+    }
+  };
   return (
     <main>
       <header className="navbar">
         <a className="brand" href="#inicio" aria-label="Inicio">
           <img
             className="brand-logo"
-            src="/images/Logo.png"
+            src={`${import.meta.env.BASE_URL}images/Logo.png`}
             alt="Draugr Studio"
           />
         </a>
@@ -20,7 +62,7 @@ function App() {
         </nav>
 
         <a className="cart-link" href="#merch" aria-label="Ver merchandising">
-          <img src="/images/cart.png" alt="" />
+          <img src={`${import.meta.env.BASE_URL}images/cart.png`} alt="" />
         </a>
       </header>
 
@@ -31,7 +73,7 @@ function App() {
 
           <img
             className="hero-logo"
-            src="/images/ashes-logo.png"
+            src={`${import.meta.env.BASE_URL}images/ashes-logo.png`}
             alt="Ashes of Mind"
           />
 
@@ -46,7 +88,7 @@ function App() {
               <span className="button-text">ENTRAR AL UNIVERSO</span>
               <img
                 className="button-icon"
-                src="/images/button-icon.png"
+                src={`${import.meta.env.BASE_URL}images/button-icon.png`}
                 alt=""
               />
             </a>
@@ -68,7 +110,7 @@ function App() {
           <div className="game-intro">
             <img
               className="hero-logo"
-              src="/images/ashes-logo.png"
+              src={`${import.meta.env.BASE_URL}images/ashes-logo.png`}
               alt="Ashes of Mind"
             />
 
@@ -82,7 +124,7 @@ function App() {
               <span>VER TRÁILER</span>
               <img
                 className="game-trailer-icon"
-                src="/images/button-icon.png"
+                src={`${import.meta.env.BASE_URL}images/button-icon.png`}
                 alt=""
               />
             </a>
@@ -243,10 +285,7 @@ function App() {
                 Tu opinión nos ayuda a crear una mejor experiencia.
               </p>
 
-              <form
-                className="bug-form"
-                onSubmit={(event) => event.preventDefault()}
-              >
+              <form className="bug-form" onSubmit={handleSubmit}>
                 <label
                   className="visually-hidden"
                   htmlFor="bug-description"
@@ -287,10 +326,15 @@ function App() {
 
                 <button
                   className="feedback-submit-button"
-                  type="button"
+                  type="submit"
+                  disabled={sending}
                 >
-                  ENVIAR COMENTARIO
+                  {sending ? 'ENVIANDO...' : 'ENVIAR COMENTARIO'}
                 </button>
+
+                {feedbackMessage && (
+                  <p role="status">{feedbackMessage}</p>
+                )}
               </form>
 
             </div>
@@ -298,10 +342,11 @@ function App() {
             <div className="survey-card">
 
               <div className="survey-copy">
-                <h3>ENCUESTA DE EXPERIENCIA</h3>
+                <h3>ENCUESTA DE FEEDBACK - UI/UX</h3>
 
                 <p>
-                  Cuéntanos cómo te ha funcionado el juego en esta breve encuesta.
+                  Cuéntanos cómo te ha parecido los controles, interfaces y
+                  botones del juego para mejorar la experiencia de usuario.
                 </p>
               </div>
 
@@ -317,15 +362,37 @@ function App() {
 
             </div>
 
+            <div className="survey-card">
+
+              <div className="survey-copy">
+                <h3>ENCUESTA DE EXPERIENCIA</h3>
+
+                <p>
+                  Cuéntanos cómo te ha funcionado el juego en esta breve encuesta.
+                </p>
+              </div>
+
+              <a
+                className="survey-button"
+                href="https://docs.google.com/forms/d/e/1FAIpQLScChD-cC67Cvvu125EsSKWfVErf_3Uy4r9snnKEEswEWj9Smw/viewform?usp=publish-editor"
+              >
+                <span>IR A LA ENCUESTA</span>
+                <span className="survey-arrow" aria-hidden="true">
+                  ›
+                </span>
+              </a>
+
+            </div>
+
           </div>
         </div>
       </section>
 
-      
+
       <footer className="footer" id="draugr">
         <img
           className="footer-logo"
-          src="/images/Logo.png"
+          src={`${import.meta.env.BASE_URL}images/Logo.png`}
           alt="Draugr Studio"
         />
 
@@ -335,23 +402,23 @@ function App() {
 
         <nav className="footer-socials" aria-label="Redes sociales">
           <a href="#instagram" aria-label="Instagram">
-            <img src="/images/instagram.png" alt="" />
+            <img src={`${import.meta.env.BASE_URL}images/instagram.png`} alt="" />
           </a>
 
-          <a href="#youtube" aria-label="YouTube">
-            <img src="/images/youtube.png" alt="" />
+          <a href="https://www.youtube.com/@DraugrStudios2026" aria-label="YouTube">
+            <img src={`${import.meta.env.BASE_URL}images/youtube.png`} alt="" />
           </a>
 
           <a href="mailto:contacto@draugrstudio.com" aria-label="Correo electrónico">
-            <img src="/images/gmail.png" alt="" />
+            <img src={`${import.meta.env.BASE_URL}images/gmail.png`} alt="" />
           </a>
 
           <a href="#tiktok" aria-label="TikTok">
-            <img src="/images/tiktok.png" alt="" />
+            <img src={`${import.meta.env.BASE_URL}images/tiktok.png`} alt="" />
           </a>
 
           <a href="#discord" aria-label="Discord">
-            <img src="/images/discord.png" alt="" />
+            <img src={`${import.meta.env.BASE_URL}images/discord.png`} alt="" />
           </a>
         </nav>
 
@@ -360,7 +427,7 @@ function App() {
         <p className="copyright">
           © 2026 Draugr Studio. Todos los derechos reservados.
         </p>
-      </footer> 
+      </footer>
     </main>
   )
 }
