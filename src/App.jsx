@@ -51,7 +51,7 @@ function App() {
               />
             </a>
 
-            <a className="button button-secondary" href="aunno">
+            <a className="button button-secondary" href="https://youtu.be/xlH8TP3dKN8">
               <span className="play-icon">
                 <span className="play-triangle"></span>
               </span>
@@ -78,7 +78,7 @@ function App() {
               realidad y la mente se desdibujan.
             </p>
 
-            <a className="game-trailer-button" href="#trailer">
+            <a className="game-trailer-button" href="https://youtu.be/xlH8TP3dKN8">
               <span>VER TRÁILER</span>
               <img
                 className="game-trailer-icon"
