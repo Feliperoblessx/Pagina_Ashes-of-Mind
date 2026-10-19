@@ -111,7 +111,13 @@ a {
   object-fit: contain;
 }
 
+.nav-links a {
+  transition: color 0.25s ease;
+}
 
+.nav-links a.active {
+  color: #166AB6;
+}
 
   /*Sección Portadita */
 .hero {

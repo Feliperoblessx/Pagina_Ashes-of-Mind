@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import './App.css'
+import Universo from './Universo.jsx';
+import Estudio from './Estudio.jsx';
+import Merch from './Merch.jsx';
+import { HashRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
 
-function App() {
+
+function Inicio() {
   const [sending, setSending] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState('');
 
@@ -58,27 +63,25 @@ function App() {
   return (
     <main>
       <header className="navbar">
-        <a className="brand" href="#inicio" aria-label="Inicio">
+        <Link className="brand" to="/" aria-label="Inicio">
           <img
             className="brand-logo"
             src={`${import.meta.env.BASE_URL}images/Logo.png`}
             alt="Draugr Studio"
           />
-        </a>
+        </Link>
 
         <nav className="nav-links" aria-label="Navegación principal">
-          <a href="#inicio">INICIO</a>
-          <a href="#universo">UNIVERSO</a>
-          <a href="#draugr">ESTUDIO</a>
-          <a href="#merch">MERCH</a>
+          <NavLink to="/" end>INICIO</NavLink>
+          <NavLink to="/universo">UNIVERSO</NavLink>
+          <NavLink to="/estudio">ESTUDIO</NavLink>
+          <NavLink to="/merch">MERCH</NavLink>
         </nav>
 
         <a className="cart-link" href="#merch" aria-label="Ver merchandising">
           <img src={`${import.meta.env.BASE_URL}images/cart.png`} alt="" />
         </a>
       </header>
-
-
 
       <section className="hero" id="inicio">
         <div className="hero-content">
@@ -96,16 +99,25 @@ function App() {
           </p>
 
           <div className="hero-buttons">
-            <a className="button button-primary fuente-titulos" href="#universo">
+            <Link className="button button-primary fuente-titulos" to="/universo">
               <span className="button-text">ENTRAR AL UNIVERSO</span>
               <img
                 className="button-icon"
                 src={`${import.meta.env.BASE_URL}images/button-icon.png`}
                 alt=""
               />
-            </a>
+            </Link>
 
-            <a className="button button-secondary" href="#build">
+            <a
+              className="button button-secondary"
+              href={`${window.location.pathname}${window.location.search}#build`}
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('build')?.scrollIntoView({
+                  behavior: 'smooth',
+                });
+              }}
+            >
               <span className="play-icon">
                 <span className="play-triangle"></span>
               </span>
@@ -444,4 +456,17 @@ function App() {
   )
 }
 
-export default App
+function App() {
+  return (
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route path="/universo" element={<Universo />} />
+        <Route path="/estudio" element={<Estudio />} />
+        <Route path="/merch" element={<Merch />} />
+      </Routes>
+    </HashRouter>
+  );
+}
+
+export default App;
