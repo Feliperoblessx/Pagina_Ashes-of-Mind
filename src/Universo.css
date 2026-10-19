@@ -1,0 +1,433 @@
+
+.universo-page {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #080b0e;
+  color: #fff;
+}
+
+/* No modificamos el diseño de la navbar */
+
+/* Sección principal */
+.universo-page .universo-hero {
+ position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  width: 100%;
+  min-height: 800px;
+  margin: 0;
+  padding: 220px 24px 100px;
+  box-sizing: border-box;
+
+  text-align: center;
+}
+
+/* Contenedor centrado */
+.universo-page .universo-hero-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Texto pequeño azul */
+.universo-page .universo-eyebrow {
+  display: block;
+  position: static;
+  width: 100%;
+
+  margin: 0 0 32px;
+  padding: 0;
+
+  color: #1685e8;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Título */
+.universo-page .universo-hero h1 {
+  position: static;
+  width: 100%;
+  margin: 0 0 28px;
+  padding: 0;
+  color: #fff;
+  font-size: 65px;
+  line-height: 1.15;
+  text-align: center;
+}
+
+/* Descripción */
+.universo-page .universo-description {
+  position: static;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #f0f0f0;
+  font-size: 30px;
+  line-height: 1.25;
+  text-align: center;
+}
+
+
+/* Sección teaser trailer */
+.universo-page .teaser-section {
+  width: 100%;
+  padding: 45px 6% 70px;
+  box-sizing: border-box;
+  background: #080b0e;
+  color: #fff;
+}
+
+.universo-page .teaser-header {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto 12px;
+}
+
+.universo-page .teaser-eyebrow {
+  margin: 0 0 12px;
+  color: #1685e8;
+  font-size: 10px;
+  letter-spacing: 4px;
+}
+
+.universo-page .teaser-panel {
+  width: 100%;
+  max-width: 1500px;
+  min-height: 480px;
+  margin: 0 auto;
+  padding: 50px;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: 45px;
+
+  border: 1px solid rgba(22, 106, 182, 0.2);
+  border-radius: 16px;
+  background: #080B0E;
+}
+
+.universo-page .teaser-content {
+  min-width: 0;
+}
+
+.universo-page .teaser-content h2 {
+  margin: 0 0 20px;
+  color: #fff;
+  font-size: clamp(27px, 3vw, 48px);
+  font-weight: normal;
+  line-height: 1.35;
+}
+
+.universo-page .teaser-description {
+  margin: 0 0 34px;
+  color: #e8e8e5;
+  font-size: clamp(17px, 1.8vw, 24px);
+  line-height: 1.25;
+}
+
+.universo-page .teaser-button {
+  width: 270px;
+  max-width: 100%;
+  min-height: 46px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 7px;
+  background: #166ab6;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+
+  transition: background 180ms ease;
+}
+
+.universo-page .teaser-button:hover {
+  background: #104e84;
+}
+
+/* Espacio reservado para la imagen */
+.universo-page .teaser-image-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #080b0e;
+}
+
+.universo-page .teaser-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* HISTORIA INTERACTIVA */
+
+.universo-page .historia-section {
+  width: 100%;
+  padding: 0 7% 80px;
+  box-sizing: border-box;
+  color: #f0f0f0;
+}
+
+.universo-page .historia-header {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto 56px;
+}
+
+.universo-page .historia-eyebrow {
+  margin: 0 0 8px;
+  color: #1685e8;
+  font-size: 10px;
+  letter-spacing: 5px;
+}
+
+.universo-page .historia-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(22, 133, 232, 0.65);
+}
+
+.universo-page .historia-panel {
+  width: 100%;
+  max-width: 1120px;
+  min-height: 415px;
+  margin: 0 auto;
+  padding: 48px 50px;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 40px;
+
+  border-radius: 36px;
+  background: #142630;
+}
+
+.universo-page .historia-content {
+  min-width: 0;
+}
+
+.universo-page .historia-content h2 {
+  margin: 0 0 26px;
+  color: #fff;
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.universo-page .historia-content p {
+  max-width: 440px;
+  margin: 0 0 26px;
+  color: #e8e8e5;
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.universo-page .historia-button {
+  width: fit-content;
+  min-height: 43px;
+  padding: 0 30px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 7px;
+  background: #166ab6;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.universo-page .historia-button:hover {
+  background: #104e84;
+  transform: translateY(-2px);
+}
+
+/* Círculo y etiquetas */
+
+.universo-page .historia-visual {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.universo-page .historia-circle {
+  width: min(100%, 280px);
+  aspect-ratio: 1 / 1;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid rgba(22, 106, 182, 0.55);
+  border-radius: 50%;
+  background: radial-gradient(circle, #17394e 0%, #102633 72%);
+  box-shadow: 0 0 25px rgba(22, 106, 182, 0.12);
+}
+
+.universo-page .historia-question {
+  color: #dce4e9;
+  font-size: 100px;
+  line-height: 1;
+}
+
+.universo-page .historia-tag {
+  position: absolute;
+  z-index: 1;
+  padding: 12px 10px;
+
+  border: 1px solid rgba(22, 106, 182, 0.25);
+  border-radius: 7px;
+  background: #080d12;
+  color: #e8e8e5;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.universo-page .historia-tag span {
+  color: #1685e8;
+}
+
+.universo-page .historia-tag-age {
+  top: -12px;
+  left: 5%;
+}
+
+.universo-page .historia-tag-murder {
+  right: 0;
+  bottom: 15%;
+}
+
+@media (max-width: 700px) {
+  .universo-page .historia-section {
+    padding: 0 5% 50px;
+  }
+
+  .universo-page .historia-header {
+    margin-bottom: 30px;
+  }
+
+  .universo-page .historia-panel {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding: 32px 24px;
+    border-radius: 24px;
+  }
+
+  .universo-page .historia-content h2 {
+    font-size: 30px;
+  }
+
+  .universo-page .historia-content p {
+    font-size: 18px;
+  }
+
+  .universo-page .historia-visual {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .universo-page .historia-circle {
+    width: min(75%, 240px);
+  }
+
+  .universo-page .historia-question {
+    font-size: 80px;
+  }
+
+  .universo-page .historia-tag-age {
+    left: 0;
+  }
+
+  .universo-page .historia-tag-murder {
+    right: 0;
+  }
+}
+
+
+@media (max-width: 800px) {
+  .universo-page .teaser-section {
+    padding: 35px 5% 50px;
+  }
+
+  .universo-page .teaser-panel {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 28px;
+  }
+
+  .universo-page .teaser-description br {
+    display: none;
+  }
+
+  .universo-page .teaser-image-placeholder {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .universo-page .teaser-panel {
+    padding: 22px;
+  }
+
+  .universo-page .teaser-content h2 {
+    font-size: 27px;
+  }
+
+  .universo-page .teaser-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .universo-page .universo-hero {
+    min-height: 560px;
+    padding: 65px 20px 80px;
+  }
+
+  .universo-page .universo-eyebrow {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  .universo-page .universo-hero h1 {
+    font-size: 30px;
+  }
+
+  .universo-page .universo-description br {
+    display: none;
+  }
+}
+
