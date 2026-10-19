@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import './App.css'
-import emailjs from '@emailjs/browser';
-
 
 function App() {
   const [sending, setSending] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState('');
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -13,31 +12,44 @@ function App() {
     const form = event.currentTarget;
     const formData = new FormData(form);
 
-    const category = formData.get('category');
-    const description = formData.get('description');
+    const categoryNames = {
+      bug: 'Bug / Error',
+      execution: 'Problemas al ejecutar',
+      performance: 'Problemas de rendimiento',
+      complaint: 'Queja',
+      suggestion: 'Sugerencia',
+    };
+
+    const categoria = categoryNames[formData.get('category')];
+    const descripcion = String(formData.get('description') || '').trim();
+
+    if (!categoria || !descripcion || descripcion.length > 5000) {
+      setFeedbackMessage('Revisa la categoría y el comentario.');
+      return;
+    }
 
     setSending(true);
     setFeedbackMessage('');
 
     try {
-      await emailjs.send(
-        '@DRAUGRSTUDIOSMULTIMEDIA',
-        'template_x812ozq',
-        {
-          categoria: category,
-          mensaje: description,
+      await fetch('https://script.google.com/macros/s/AKfycbwPE9jt5TeoKKE2b7F5zlt7khgs6NEm-bbEzlwj0_JrtrCffkhx1n1_XCsCU6PD0kjq/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
         },
-        {
-          publicKey: '-Arl0ePp7K1CGvq6m',
-        }
-      );
+        body: JSON.stringify({
+          categoria,
+          descripcion,
+        }),
+      });
 
-      setFeedbackMessage('¡Comentario enviado correctamente!');
+      setFeedbackMessage('Comentario enviado con éxito.');
       form.reset();
     } catch (error) {
-      console.error('Error al enviar el comentario:', error);
+      console.error('Error al enviar el reporte:', error);
       setFeedbackMessage(
-        'No se pudo enviar el comentario. Inténtalo de nuevo.'
+        'No se pudo enviar el reporte. Inténtalo de nuevo.'
       );
     } finally {
       setSending(false);
