@@ -3,6 +3,9 @@ import './App.css'
 import Universo from './Universo.jsx';
 import Estudio from './Estudio.jsx';
 import Merch from './Merch.jsx';
+import Animacion2d from './Animacion2d.jsx';
+import Comic from './Comic.jsx';
+import HistoriaInteractiva from './HistoriaInteractiva.jsx';
 import { HashRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
 
 
@@ -464,6 +467,9 @@ function App() {
         <Route path="/universo" element={<Universo />} />
         <Route path="/estudio" element={<Estudio />} />
         <Route path="/merch" element={<Merch />} />
+        <Route path="/Animacion2d" element={<Animacion2d />} />
+        <Route path="/Comic" element={<Comic />} />
+        <Route path="/HistoriaInteractiva" element={<HistoriaInteractiva />} />
       </Routes>
     </HashRouter>
   );

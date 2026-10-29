@@ -114,12 +114,12 @@ function Universo() {
                             Ashes of Mind.
                         </p>
 
-                        <a
-                            className="teaser-button fuente-titulos"
-                            href="https://youtu.be/xlH8TP3dKN8"
+                        <Link
+                            className="historia-button fuente-titulos"
+                            to="/Animacion2d"
                         >
-                            Descubre El Mounstro
-                        </a>
+                            Ver Animación 2D
+                        </Link>
                     </div>
 
                     <div className="teaser-image-container">
@@ -156,12 +156,12 @@ function Universo() {
                             Resueltos.
                         </p>
 
-                        <a
-                            className="teaser-button fuente-titulos"
-                            href="https://youtu.be/xlH8TP3dKN8"
+                        <Link
+                            className="historia-button fuente-titulos"
+                            to="/Comic"
                         >
                             Leer Comic
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="teaser-image-container">
@@ -196,9 +196,12 @@ function Universo() {
                             ocurrió antes y detrás de la historia principal.
                         </p>
 
-                        <a className="historia-button fuente-titulos" href="#">
+                       <Link
+                            className="historia-button fuente-titulos"
+                            to="/HistoriaInteractiva"
+                        >
                             HISTORIA INTERACTIVA
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="historia-visual">
