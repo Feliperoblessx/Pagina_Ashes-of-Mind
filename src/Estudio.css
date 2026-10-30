@@ -1,0 +1,327 @@
+ @font-face {
+  font-family: "Adonais";
+  src: url("/Pagina_Ashes-of-Mind/fonts/Adonais.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.estudio-page {
+  background: #fff;
+  color: #fff;
+}
+
+.estudio-hero {
+  position: relative;
+  min-height: 680px;
+  margin: 10px 40px 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(25, 25, 28, 0.35),
+      rgba(8, 8, 13, 0.88)
+    ),
+    url('/images/Draugr-Background.png');
+
+  background-size: cover;
+  background-position: center;
+
+}
+
+.estudio-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(10, 10, 14, 0.48),
+    transparent 85%
+  );
+}
+
+.estudio-hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(650px, 80%);
+  margin-left: 5%;
+  padding: 300px 0 70px;
+}
+
+.estudio-hero-content .estudio-titulo {
+  margin: 0 0 30px;
+  font-size: clamp(38px, 4.2vw, 58px);
+  line-height: 1.1;
+  font-family: "Adonais", serif;
+}
+
+.estudio-hero-content p {
+  max-width: 590px;
+  margin: 0 0 36px;
+  font-size: clamp(19px, 2.1vw, 27px);
+  line-height: 1.25;
+}
+
+.estudio-hero-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: fit-content;
+  min-width: 225px;
+  padding: 15px 25px;
+  border-radius: 6px;
+  background: #1976bd;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.25s ease;
+  font-family: "Adonais", serif;
+}
+
+.estudio-hero-button:hover {
+  background: #145f98;
+}
+
+.estudio-hero-button span {
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+}
+
+/* SECCIÓN VISIÓN */
+
+.estudio-vision {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 55px 4% 50px;
+  background: #fff;
+  color: #111;
+}
+
+.vision-header {
+  width: 90%;
+  margin: 0 auto 5px;
+}
+
+.vision-header p {
+  margin: 0;
+  color: #4B1F84;
+  font-family: "Bell MT", Georgia, serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+}
+
+.vision-panel {
+  width: 90%;
+  min-height: 375px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 48px 40px 25px;
+
+  border: 1px solid #4B1F84;
+  border-radius: 15px;
+  background: #fff;
+}
+
+.vision-panel h2 {
+  margin: 0 0 35px;
+  color: #48266f;
+  font-family: "Adonais", serif;
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.15;
+  font-weight: 900;
+  -webkit-text-stroke: 1.5px #4B1F84;
+}
+
+.vision-panel > p {
+  max-width: 440px;
+  margin: 0;
+  color: #090909;
+  font-family: "Bell MT", Georgia, serif;
+  font-size: clamp(19px, 2vw, 27px);
+  font-weight: bold;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+
+/* SECCIÓN EQUIPO */
+
+.estudio-equipo {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px 4% 50px;
+  background: #fff;
+  color: #111;
+  scroll-margin-top: 30px;
+}
+
+.equipo-header {
+  width: 90%;
+  margin: 0 auto 5px;
+}
+
+.equipo-header p {
+  margin: 0;
+  color: #4B1F84;
+  font-family: "Bell MT", Georgia, serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+}
+
+.equipo-panel {
+  width: 90%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 35px 4% 27px;
+  border: 1px solid #4B1F84;
+  border-radius: 15px;
+  background: #fff;
+  font-weight: 900;
+  
+}
+
+.equipo-panel h2 {
+  margin: 0 0 55px;
+  color: #4B1F84;
+  font-family: "Adonais", serif;
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 900;
+  -webkit-text-stroke: 1.5px #4B1F84;
+  text-align: center;
+}
+
+.equipo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4%;
+}
+
+.equipo-card {
+  min-width: 0;
+  min-height: 510px;
+  padding: 35px 20px 20px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 1px solid #7541a6;
+  border-radius: 13px;
+  text-align: center;
+}
+
+.equipo-foto {
+  width: 100%;
+  max-width: 206px;
+  height: 275px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.equipo-card h3 {
+  margin: 22px 0 8px;
+  color: #4B1F84;
+  font-family: "Adonais", serif;
+  font-size: clamp(17px, 1.7vw, 23px);
+  font-weight: 900;
+  -webkit-text-stroke: 1px #4B1F84;
+}
+
+.equipo-cargo {
+  margin: 0 0 12px;
+  color: #111;
+  font-family: "Bell MT", Georgia, serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.equipo-logo {
+  width: 160px;
+  height: 85px;
+  object-fit: contain;
+  margin-top: auto;
+}
+
+@media (max-width: 800px) {
+  .equipo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  .estudio-equipo {
+    padding: 30px 5%;
+  }
+
+  .equipo-panel {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  .equipo-panel h2 {
+    font-size: 30px;
+    margin-bottom: 35px;
+  }
+
+  .equipo-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .equipo-card {
+    min-height: 480px;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .estudio-vision {
+    padding: 40px 5% 35px;
+  }
+
+  .vision-header,
+  .vision-panel {
+    width: 100%;
+  }
+
+  .vision-panel {
+    min-height: auto;
+    padding: 35px 25px;
+  }
+
+  .vision-panel h2 {
+    margin-bottom: 25px;
+    font-size: 34px;
+  }
+
+  .vision-panel > p {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 700px) {
+  .estudio-hero {
+    min-height: 580px;
+    margin: 8px 12px 0;
+    background-position: center;
+  }
+
+  .estudio-hero-content {
+    width: 88%;
+    margin-left: 6%;
+    padding: 55px 0;
+  }
+
+  .estudio-hero-content h1 {
+    font-size: clamp(32px, 8vw, 46px);
+  }
+
+  .estudio-hero-content p {
+    font-size: 19px;
+    line-height: 1.4;
+  }
+}

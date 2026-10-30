@@ -6,6 +6,7 @@ import Merch from './Merch.jsx';
 import Animacion2d from './Animacion2d.jsx';
 import Comic from './Comic.jsx';
 import HistoriaInteractiva from './HistoriaInteractiva.jsx';
+import ScrollToTop from './ScrollToTop.jsx';
 import { HashRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
 
 
@@ -462,6 +463,8 @@ function Inicio() {
 function App() {
   return (
     <HashRouter>
+    <ScrollToTop />
+
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/universo" element={<Universo />} />

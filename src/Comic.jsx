@@ -127,12 +127,12 @@ function Comic() {
           />
           */}
                                 <div className="personaje-image-placeholder fuente-texto">
-                                    IMAGEN DEL MONSTRUO
+                                    IMAGEN Marcus
                                 </div>
                             </div>
 
-                            <h3 className="fuente-titulos">EL MONSTRUO</h3>
-                            <p className="fuente-texto">????????</p>
+                            <h3 className="fuente-titulos">Marcus</h3>
+                            <p className="fuente-texto">Reservado e impulsivo, marcado por sus problemas para controlar la ira.</p>
                         </article>
 
                         {/* PERSONAJE 2 */}
@@ -167,13 +167,13 @@ function Comic() {
           />
           */}
                                 <div className="personaje-image-placeholder fuente-texto">
-                                    IMAGEN DEL DOCTOR
+                                    IMAGEN DE NINA
                                 </div>
                             </div>
 
-                            <h3 className="fuente-titulos">DOCTOR WAGNER</h3>
+                            <h3 className="fuente-titulos">Nina</h3>
                             <p className="fuente-texto">
-                                Psiquiatra reconocido y experimentado.
+                                Empática, paciente y protectora, especialmente con Marcus.
                             </p>
                         </article>
                     </div>
