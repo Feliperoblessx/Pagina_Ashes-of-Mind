@@ -9,9 +9,6 @@
   color: #fff;
 }
 
-/* No modificamos el diseño de la navbar */
-
-/* Sección principal */
 .universo-page .universo-hero {
  position: relative;
   display: flex;
@@ -40,7 +37,6 @@
   text-align: center;
 }
 
-/* Texto pequeño azul */
 .universo-page .universo-eyebrow {
   display: block;
   position: static;

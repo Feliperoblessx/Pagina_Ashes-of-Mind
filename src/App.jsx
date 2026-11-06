@@ -6,6 +6,7 @@ import Merch from './Merch.jsx';
 import Animacion2d from './Animacion2d.jsx';
 import Comic from './Comic.jsx';
 import HistoriaInteractiva from './HistoriaInteractiva.jsx';
+import Carrito from './Carrito.jsx';
 import ScrollToTop from './ScrollToTop.jsx';
 import { HashRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
 
@@ -473,6 +474,7 @@ function App() {
         <Route path="/Animacion2d" element={<Animacion2d />} />
         <Route path="/Comic" element={<Comic />} />
         <Route path="/HistoriaInteractiva" element={<HistoriaInteractiva />} />
+        <Route path="/Carrito" element={<Carrito />} />
       </Routes>
     </HashRouter>
   );
