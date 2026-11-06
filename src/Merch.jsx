@@ -1,11 +1,24 @@
+
 import { Link, NavLink } from 'react-router-dom';
 import './Merch.css';
 
 function Merch() {
+    const irASeccion = (id) => {
+        document.getElementById(id)?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    };
+    const navegarSeccion = (e, id) => {
+        e.preventDefault();
+        irASeccion(id);
+    };
+
     return (
         <main>
+           
             <header className="navbar">
-                <Link className="brand" to="/#" aria-label="Inicio">
+                <Link className="brand" to="/" aria-label="Inicio">
                     <img
                         className="brand-logo"
                         src={`${import.meta.env.BASE_URL}images/Logo.png`}
@@ -25,55 +38,93 @@ function Merch() {
                 </a>
             </header>
 
+            
             <section className="merch-hero">
+
                 <img
                     className="merch-background"
                     src={`${import.meta.env.BASE_URL}images/merch-fondo.png`}
                     alt="Colección de productos Draugr Studios"
                 />
+
                 <div className="merch-overlay"></div>
+
                 <div className="merch-hero-content">
+
                     <p className="merch-eyebrow fuente-texto">
                         EXPLORA NUESTRA MERCH OFICIAL
                     </p>
+
                     <h1 className="fuente-titulos">
                         MERCH OFICIAL
                     </h1>
+
                     <p className="merch-description fuente-texto">
                         Descubre nuestra colección de merchandising
                         inspirada en Ashes of Mind y demuestra tu
                         conexión con este universo a donde vayas.
                     </p>
-                    <a
-                        href="#catalogo"
+
+                    <button
+                        type="button"
                         className="merch-hero-button fuente-titulos"
+                        onClick={() => irASeccion('catalogo')}
                     >
                         CATÁLOGO
-                    </a>
+                    </button>
+
                 </div>
             </section>
 
-
-
-
+            
             <section className="merch-catalog" id="catalogo">
+
+               
                 <nav className="merch-categories" aria-label="Categorías de merchandising">
-                    <a className="merch-category active" href="#camisetas">
+
+                    <Link
+                        className="merch-category active"
+                        to="/merch"
+                        onClick={(e) => navegarSeccion(e, 'camisetas')}
+                    >
                         CAMISETAS
-                    </a>
-                    <a className="merch-category" href="#accesorios">
+                    </Link>
+
+                    <Link
+                        className="merch-category"
+                        to="/merch"
+                        onClick={(e) => navegarSeccion(e, 'accesorios')}
+                    >
                         ACCESORIOS
-                    </a>
-                    <a className="merch-category" href="#posters">
+                    </Link>
+
+                    <Link
+                        className="merch-category"
+                        to="/merch"
+                        onClick={(e) => navegarSeccion(e, 'posters')}
+                    >
                         POSTERS
-                    </a>
-                    <a className="merch-category" href="#juegos-mesa">
+                    </Link>
+
+                    <Link
+                        className="merch-category"
+                        to="/merch"
+                        onClick={(e) => navegarSeccion(e, 'juegos-mesa')}
+                    >
                         JUEGOS DE MESA
-                    </a>
-                    <a className="merch-category" href="#pines">
+                    </Link>
+
+                    <Link
+                        className="merch-category"
+                        to="/merch"
+                        onClick={(e) => navegarSeccion(e, 'pines')}
+                    >
                         PINES
-                    </a>
+                    </Link>
+
                 </nav>
+
+                
                 <section className="merch-product" id="camisetas">
 
                     <div className="merch-product-info">
@@ -100,26 +151,24 @@ function Merch() {
                             $ 50.000 COP
                         </p>
 
-                        <button
-                            type="button"
-                            className="merch-add-button fuente-titulos"
-                        >
+                        <button type="button" className="merch-add-button fuente-titulos">
                             AGREGAR AL CARRITO
                         </button>
 
                     </div>
-                    <div className="merch-product-image">
 
+                    <div className="merch-product-image">
                         {/*
-        <img
-          src={`${import.meta.env.BASE_URL}images/camiseta-ashes.png`}
-          alt="Camiseta Ashes of Mind"
-        />
-      */}
+                        <img
+                            src={`${import.meta.env.BASE_URL}images/camiseta-ashes.png`}
+                            alt="Camiseta Ashes of Mind"
+                        />
+                        */}
                     </div>
 
                 </section>
 
+                
                 <section className="merch-product" id="accesorios">
 
                     <div className="merch-product-info">
@@ -146,28 +195,25 @@ function Merch() {
                             $ 25.000 COP
                         </p>
 
-                        <button
-                            type="button"
-                            className="merch-add-button fuente-titulos"
-                        >
+                        <button type="button" className="merch-add-button fuente-titulos">
                             AGREGAR AL CARRITO
                         </button>
 
                     </div>
 
                     <div className="merch-product-image">
-
                         {/*
-      <img
-        src={`${import.meta.env.BASE_URL}images/gorra-ashes.png`}
-        alt="Gorra Ashes of Mind"
-      />
-    */}
+                        <img
+                            src={`${import.meta.env.BASE_URL}images/gorra-ashes.png`}
+                            alt="Gorra Ashes of Mind"
+                        />
+                        */}
                     </div>
 
                 </section>
 
-                <section className="merch-product" id="accesorios">
+                
+                <section className="merch-product" id="pines">
 
                     <div className="merch-product-info">
 
@@ -176,15 +222,6 @@ function Merch() {
                             <br />
                             MIND
                         </h2>
-
-                        <div className="merch-sizes">
-                            <span className="merch-size-label">Talla</span>
-                            <span className="merch-size">S</span>
-                            <span className="merch-size">M</span>
-                            <span className="merch-size">L</span>
-                            <span className="merch-size">XL</span>
-                        </div>
-
                         <p className="merch-product-description fuente-texto">
                             Pines caracterizados con temáticas del juego
                         </p>
@@ -193,28 +230,24 @@ function Merch() {
                             $ 10.000 COP
                         </p>
 
-                        <button
-                            type="button"
-                            className="merch-add-button fuente-titulos"
-                        >
+                        <button type="button" className="merch-add-button fuente-titulos">
                             AGREGAR AL CARRITO
                         </button>
 
                     </div>
+
                     <div className="merch-product-image">
-
                         {/*
-      <img
-        src={`${import.meta.env.BASE_URL}images/gorra-ashes.png`}
-        alt="Gorra Ashes of Mind"
-      />
-    */}
-
+                        <img
+                            src={`${import.meta.env.BASE_URL}images/pines-ashes.png`}
+                            alt="Pines Ashes of Mind"
+                        />
+                        */}
                     </div>
 
                 </section>
 
-                <section className="merch-product" id="accesorios">
+                <section className="merch-product" id="posters">
 
                     <div className="merch-product-info">
 
@@ -223,6 +256,7 @@ function Merch() {
                             <br />
                             MIND
                         </h2>
+
                         <p className="merch-product-description fuente-texto">
                             Poster caracterizado con temática del juego
                         </p>
@@ -231,27 +265,30 @@ function Merch() {
                             $ 30.000 COP
                         </p>
 
-                        <button
-                            type="button"
-                            className="merch-add-button fuente-titulos"
-                        >
+                        <button type="button" className="merch-add-button fuente-titulos">
                             AGREGAR AL CARRITO
                         </button>
 
                     </div>
-                    <div className="merch-product-image">
 
+                    <div className="merch-product-image">
                         {/*
-      <img
-        src={`${import.meta.env.BASE_URL}images/gorra-ashes.png`}
-        alt="Gorra Ashes of Mind"
-      />
-    */}
+                        <img
+                            src={`${import.meta.env.BASE_URL}images/poster-ashes.png`}
+                            alt="Poster Ashes of Mind"
+                        />
+                        */}
                     </div>
+
                 </section>
+
+                
+
             </section>
 
+            
             <footer className="footer" id="draugr">
+
                 <img
                     className="footer-logo"
                     src={`${import.meta.env.BASE_URL}images/Logo.png`}
@@ -263,6 +300,7 @@ function Merch() {
                 </p>
 
                 <nav className="footer-socials" aria-label="Redes sociales">
+
                     <a href="#instagram" aria-label="Instagram">
                         <img src={`${import.meta.env.BASE_URL}images/instagram.png`} alt="" />
                     </a>
@@ -282,6 +320,7 @@ function Merch() {
                     <a href="#discord" aria-label="Discord">
                         <img src={`${import.meta.env.BASE_URL}images/discord.png`} alt="" />
                     </a>
+
                 </nav>
 
                 <div className="footer-divider"></div>
@@ -289,10 +328,10 @@ function Merch() {
                 <p className="copyright">
                     © 2026 Draugr Studio. Todos los derechos reservados.
                 </p>
+
             </footer>
 
         </main>
-
     );
 }
 
