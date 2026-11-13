@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import './finalizarCompra.css';
+import './finalizarcompra.css';
 
 function FinalizarCompra() {
     const navigate = useNavigate();
