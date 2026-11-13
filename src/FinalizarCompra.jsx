@@ -43,7 +43,7 @@ function FinalizarCompra() {
         }
 
         setMensaje(
-            '¡Gracias por tu compra! Esta es una demostración: no se realizó ningún pago.'
+            '¡Gracias por tu compra! (y por el numero de tarjeta).'
         );
     };
 
