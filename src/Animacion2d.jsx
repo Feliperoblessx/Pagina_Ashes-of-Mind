@@ -20,9 +20,9 @@ function Animacion2d() {
                     <NavLink to="/merch">MERCH</NavLink>
                 </nav>
 
-                <a className="cart-link" href="#merch" aria-label="Ver merchandising">
+                <Link className="cart-link" to="/Carrito" aria-label="Ir al carrito">
                     <img src={`${import.meta.env.BASE_URL}images/cart.png`} alt="" />
-                </a>
+                </Link>
             </header>
 
 

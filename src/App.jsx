@@ -8,6 +8,7 @@ import Comic from './Comic.jsx';
 import HistoriaInteractiva from './HistoriaInteractiva.jsx';
 import Carrito from './Carrito.jsx';
 import ScrollToTop from './ScrollToTop.jsx';
+import FinalizarCompra from './FinalizarCompra.jsx';
 import { HashRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
 
 
@@ -83,9 +84,9 @@ function Inicio() {
           <NavLink to="/merch">MERCH</NavLink>
         </nav>
 
-        <a className="cart-link" href="#merch" aria-label="Ver merchandising">
+        <Link className="cart-link" to="/Carrito" aria-label="Ir al carrito">
           <img src={`${import.meta.env.BASE_URL}images/cart.png`} alt="" />
-        </a>
+        </Link>
       </header>
 
       <section className="hero" id="inicio">
@@ -464,7 +465,7 @@ function Inicio() {
 function App() {
   return (
     <HashRouter>
-    <ScrollToTop />
+      <ScrollToTop />
 
       <Routes>
         <Route path="/" element={<Inicio />} />
@@ -475,6 +476,7 @@ function App() {
         <Route path="/Comic" element={<Comic />} />
         <Route path="/HistoriaInteractiva" element={<HistoriaInteractiva />} />
         <Route path="/Carrito" element={<Carrito />} />
+        <Route path="/FinalizarCompra" element={<FinalizarCompra />} />
       </Routes>
     </HashRouter>
   );

@@ -299,6 +299,27 @@
   text-align: center;
 }
 
+.merch-size {
+    background-color: #1976b9;
+    color: #ffffff;
+    border-color: #1976b9;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.merch-size.selected {
+    background-color: #06436f;
+    border-color: #06436f;
+    color: #ffffff;
+}
+
+
+
+.merch-size:hover {
+    border-color: #1976bd;
+}
+
+
 /* ADAPTACIÓN A MÓVILES */
 
 @media (max-width: 800px) {
