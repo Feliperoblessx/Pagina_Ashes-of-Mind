@@ -26,6 +26,43 @@ function Inicio() {
   const [sending, setSending] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState('');
 
+  // Modelos de la galería 3D
+  const modelos = [
+    {
+      nombre: 'PRESENCIA',
+      categoria: 'Enemigos',
+      descripcion: 'Una figura que acecha entre las sombras.',
+      archivo: `${import.meta.env.BASE_URL}models/presencia.glb`,
+      margen: 1.5,
+    },
+    {
+      nombre: 'FRENESÍ',
+      categoria: 'Enemigos',
+      descripcion: 'Una criatura que representa una amenaza dentro de Ashes of Mind.',
+      archivo: `${import.meta.env.BASE_URL}models/Frenesi.glb`,
+      margen: 1.5,
+    },
+    {
+      nombre: 'PROTA MARCUS',
+      categoria: 'Protagonistas',
+      descripcion: 'El protagonista de esta historia.',
+      archivo: `${import.meta.env.BASE_URL}models/ProtaMarcus.glb`,
+      margen: 2.5,
+    },
+  ];
+
+  // Modelo seleccionado actualmente
+  const [modeloActual, setModeloActual] = useState(0);
+
+  // Cambiar de modelo
+  const cambiarModelo = (direccion) => {
+    setModeloActual((actual) =>
+      (actual + direccion + modelos.length) % modelos.length
+    );
+  };
+
+
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -257,53 +294,68 @@ function Inicio() {
       <section className="gallery-section" id="galeria-3d">
 
         <div className="gallery-header">
-          <h2 className="fuente-titulos">GALERÍA 3D</h2>
+
+          <h2 className="fuente-titulos">
+            GALERÍA 3D
+          </h2>
 
           <div className="gallery-divider"></div>
 
           <div className="gallery-controls">
-            <button type="button" aria-label="Modelo anterior">
+
+            <button
+              type="button"
+              aria-label="Modelo anterior"
+              onClick={() => cambiarModelo(-1)}
+            >
               ‹
             </button>
 
-            <button type="button" aria-label="Modelo siguiente">
+            <button
+              type="button"
+              aria-label="Modelo siguiente"
+              onClick={() => cambiarModelo(1)}
+            >
               ›
             </button>
+
           </div>
+
         </div>
 
         <div className="gallery-model-card">
 
+          {/* VISUALIZADOR 3D */}
           <div className="model-viewer-placeholder">
 
             <Modelo3D
-              modelo={`${import.meta.env.BASE_URL}models/presencia.glb`}
+              key={modelos[modeloActual].archivo}
+              modelo={modelos[modeloActual].archivo}
+              margen={modelos[modeloActual].margen}
             />
-
-            <div className="model-tools">
-              <span>↻ GIRAR</span>
-              <span>⌕ ZOOM</span>
-            </div>
 
           </div>
 
+          {/* INFORMACIÓN DEL PERSONAJE */}
           <div className="model-info">
+
             <p className="model-category fuente-texto">
-              Enemigos
+              {modelos[modeloActual].categoria}
             </p>
 
             <h3 className="fuente-titulos">
-              PRESENCIA
+              {modelos[modeloActual].nombre}
             </h3>
 
             <p className="fuente-texto">
-              Una figura que acecha entre las sombras.
+              {modelos[modeloActual].descripcion}
             </p>
+
           </div>
 
         </div>
-      </section>
 
+      </section>
 
       {/* FEEDBACK Y DESCARGA */}
       <section className="feedback-section" id="build">
