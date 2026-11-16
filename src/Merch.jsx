@@ -243,12 +243,10 @@ function Merch() {
                     </div>
 
                     <div className="merch-product-image">
-                        {/*
                         <img
                             src={`${import.meta.env.BASE_URL}images/camiseta-ashes.png`}
                             alt="Camiseta Ashes of Mind"
                         />
-                        */}
                     </div>
                 </section>
 
@@ -307,12 +305,10 @@ function Merch() {
                     </div>
 
                     <div className="merch-product-image">
-                        {/*
                         <img
                             src={`${import.meta.env.BASE_URL}images/gorra-ashes.png`}
                             alt="Gorra Ashes of Mind"
                         />
-                        */}
                     </div>
                 </section>
 
@@ -349,12 +345,10 @@ function Merch() {
                     </div>
 
                     <div className="merch-product-image">
-                        {/*
                         <img
                             src={`${import.meta.env.BASE_URL}images/pines-ashes.png`}
                             alt="Pines Ashes of Mind"
                         />
-                        */}
                     </div>
                 </section>
 

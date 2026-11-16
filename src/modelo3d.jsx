@@ -15,66 +15,75 @@ function Personaje({ modelo }) {
 }
 
 function Modelo3D({ modelo, margen = 1.5 }) {
-  const controlsRef = useRef();
+  const controlsRef = useRef(null);
 
-  // Guardar el encuadre inicial de la cámara
-  const distanciaInicial = useRef(null);
-  const alturaInicial = useRef(null);
+  const distanciaAnterior = useRef(null);
+  const desplazamientoActual = useRef(0);
 
-  // Ajustar el encuadre solamente al utilizar el zoom
-  const ajustarZoom = (acercar) => {
+  // Desplazar cámara y objetivo juntos.
+  // Esto cambia el encuadre, no la transformación del modelo.
+  const ajustarEncuadre = () => {
     const controls = controlsRef.current;
-
     if (!controls) return;
 
-    if (distanciaInicial.current === null) {
-      distanciaInicial.current =
-        controls.object.position.distanceTo(controls.target);
+    const camera = controls.object;
 
-      alturaInicial.current = controls.target.y;
-    }
-
-    // Aplicar zoom
-    if (acercar) {
-      controls.dollyOut(1.3);
-    } else {
-      controls.dollyIn(1.3);
-    }
-
-    // Calcular cuánto se ha acercado la cámara
-    const distanciaActual =
-      controls.object.position.distanceTo(controls.target);
-
-    const diferencia = Math.max(
-      0,
-      distanciaInicial.current - distanciaActual
+    const distancia = camera.position.distanceTo(
+      controls.target
     );
 
-    // Elevar el punto de enfoque para bajar visualmente al personaje
-    controls.target.y =
-      alturaInicial.current + diferencia * 0.18;
+    if (distanciaAnterior.current === null) {
+      distanciaAnterior.current = distancia;
+    }
+
+    const acercamiento = Math.max(
+      0,
+      5 - distancia
+    );
+
+    const nuevoDesplazamiento = Math.min(
+      acercamiento * 0.28,
+      1.2
+    );
+
+    const diferencia =
+      nuevoDesplazamiento - desplazamientoActual.current;
+
+    camera.position.y += diferencia;
+    controls.target.y += diferencia;
+
+    desplazamientoActual.current = nuevoDesplazamiento;
+    distanciaAnterior.current = distancia;
 
     controls.update();
   };
 
-  // Girar la cámara 45 grados
   const girar = () => {
     const controls = controlsRef.current;
-
     if (!controls) return;
 
     controls.rotateLeft(Math.PI / 4);
     controls.update();
   };
 
-  // Acercar
   const acercar = () => {
-    ajustarZoom(true);
+    const controls = controlsRef.current;
+    if (!controls) return;
+
+    controls.dollyOut(1.3);
+    controls.update();
+
+    ajustarEncuadre();
   };
 
-  // Alejar
   const alejar = () => {
-    ajustarZoom(false);
+    const controls = controlsRef.current;
+    if (!controls) return;
+
+    controls.dollyIn(1.3);
+    controls.update();
+
+    ajustarEncuadre();
   };
 
   return (
@@ -96,7 +105,12 @@ function Modelo3D({ modelo, margen = 1.5 }) {
         />
 
         <Suspense fallback={null}>
-          <Bounds fit clip observe margin={margen}>
+          <Bounds
+            fit
+            clip
+            observe
+            margin={margen}
+          >
             <Center>
               <Personaje modelo={modelo} />
             </Center>
@@ -106,8 +120,9 @@ function Modelo3D({ modelo, margen = 1.5 }) {
         <OrbitControls
           ref={controlsRef}
           makeDefault
+          target={[0, 0, 0]}
           enableRotate={true}
-          enableZoom={false}
+          enableZoom={true}
           enablePan={false}
           enableDamping={true}
           dampingFactor={0.08}
