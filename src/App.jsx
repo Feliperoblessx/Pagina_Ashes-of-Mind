@@ -1,5 +1,7 @@
+
 import { useState } from 'react';
-import './App.css'
+import './App.css';
+
 import Universo from './Universo.jsx';
 import Estudio from './Estudio.jsx';
 import Merch from './Merch.jsx';
@@ -9,13 +11,20 @@ import HistoriaInteractiva from './HistoriaInteractiva.jsx';
 import Carrito from './Carrito.jsx';
 import ScrollToTop from './ScrollToTop.jsx';
 import FinalizarCompra from './FinalizarCompra.jsx';
-import { HashRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
+import Modelo3D from './modelo3d.jsx';
+
+import {
+  HashRouter,
+  Routes,
+  Route,
+  Link,
+  NavLink
+} from 'react-router-dom';
 
 
 function Inicio() {
   const [sending, setSending] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState('');
-
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -32,7 +41,9 @@ function Inicio() {
     };
 
     const categoria = categoryNames[formData.get('category')];
-    const descripcion = String(formData.get('description') || '').trim();
+    const descripcion = String(
+      formData.get('description') || ''
+    ).trim();
 
     if (!categoria || !descripcion || descripcion.length > 5000) {
       setFeedbackMessage('Revisa la categoría y el comentario.');
@@ -43,17 +54,20 @@ function Inicio() {
     setFeedbackMessage('');
 
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbwPE9jt5TeoKKE2b7F5zlt7khgs6NEm-bbEzlwj0_JrtrCffkhx1n1_XCsCU6PD0kjq/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'text/plain;charset=utf-8',
-        },
-        body: JSON.stringify({
-          categoria,
-          descripcion,
-        }),
-      });
+      await fetch(
+        'https://script.google.com/macros/s/AKfycbwPE9jt5TeoKKE2b7F5zlt7khgs6NEm-bbEzlwj0_JrtrCffkhx1n1_XCsCU6PD0kjq/exec',
+        {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8',
+          },
+          body: JSON.stringify({
+            categoria,
+            descripcion,
+          }),
+        }
+      );
 
       setFeedbackMessage('Comentario enviado con éxito.');
       form.reset();
@@ -66,8 +80,11 @@ function Inicio() {
       setSending(false);
     }
   };
+
   return (
     <main>
+
+      {/* NAVBAR */}
       <header className="navbar">
         <Link className="brand" to="/" aria-label="Inicio">
           <img
@@ -84,11 +101,20 @@ function Inicio() {
           <NavLink to="/merch">MERCH</NavLink>
         </nav>
 
-        <Link className="cart-link" to="/Carrito" aria-label="Ir al carrito">
-          <img src={`${import.meta.env.BASE_URL}images/cart.png`} alt="" />
+        <Link
+          className="cart-link"
+          to="/Carrito"
+          aria-label="Ir al carrito"
+        >
+          <img
+            src={`${import.meta.env.BASE_URL}images/cart.png`}
+            alt=""
+          />
         </Link>
       </header>
 
+
+      {/* HERO */}
       <section className="hero" id="inicio">
         <div className="hero-content">
 
@@ -98,15 +124,22 @@ function Inicio() {
             alt="Ashes of Mind"
           />
 
-          <p className="hero-description fuente-texto ">
+          <p className="hero-description fuente-texto">
             ¿Qué queda de nosotros cuando
-            <br></br>
+            <br />
             la mente deja de ser nuestra?
           </p>
 
           <div className="hero-buttons">
-            <Link className="button button-primary fuente-titulos" to="/universo">
-              <span className="button-text">ENTRAR AL UNIVERSO</span>
+
+            <Link
+              className="button button-primary fuente-titulos"
+              to="/universo"
+            >
+              <span className="button-text">
+                ENTRAR AL UNIVERSO
+              </span>
+
               <img
                 className="button-icon"
                 src={`${import.meta.env.BASE_URL}images/button-icon.png`}
@@ -116,9 +149,10 @@ function Inicio() {
 
             <a
               className="button button-secondary"
-              href={`${window.location.pathname}${window.location.search}#build`}
+              href="#build"
               onClick={(e) => {
                 e.preventDefault();
+
                 document.getElementById('build')?.scrollIntoView({
                   behavior: 'smooth',
                 });
@@ -127,31 +161,41 @@ function Inicio() {
               <span className="play-icon">
                 <span className="play-triangle"></span>
               </span>
-              <span className="trailer-text">JUEGA ASHES OF MIND</span>
+
+              <span className="trailer-text">
+                JUEGA ASHES OF MIND
+              </span>
             </a>
 
           </div>
         </div>
-
       </section>
 
+
+      {/* VIDEOJUEGO */}
       <section className="game-section" id="videojuego">
         <div className="game-panel">
+
           <div className="game-intro">
+
             <img
               className="hero-logo"
               src={`${import.meta.env.BASE_URL}images/ashes-logo.png`}
               alt="Ashes of Mind"
             />
 
-            <p className="game-description">
+            <p className="game-description fuente-texto">
               Ashes of Mind es una experiencia de terror
               psicológico en primera persona, donde la
               realidad y la mente se desdibujan.
             </p>
 
-            <a className="game-trailer-button" href="https://youtu.be/xlH8TP3dKN8">
+            <a
+              className="game-trailer-button"
+              href="https://youtu.be/xlH8TP3dKN8"
+            >
               <span>VER TRÁILER</span>
+
               <img
                 className="game-trailer-icon"
                 src={`${import.meta.env.BASE_URL}images/button-icon.png`}
@@ -162,13 +206,15 @@ function Inicio() {
           </div>
 
           <div className="game-highlights">
+
             <article className="game-highlight">
               <div className="game-image-placeholder">
                 <span>imagen epica 1</span>
               </div>
+
               <div className="game-highlight-text">
-                <h3>CONCEPTO</h3>
-                <p>
+                <h3 className="fuente-titulos">CONCEPTO</h3>
+                <p className="fuente-texto">
                   Una historia sobre la memoria, la culpa
                   y lo que intentamos olvidar.
                 </p>
@@ -179,9 +225,10 @@ function Inicio() {
               <div className="game-image-placeholder">
                 <span>imagen epica 2</span>
               </div>
+
               <div className="game-highlight-text">
-                <h3>EXPERIENCIA</h3>
-                <p>
+                <h3 className="fuente-titulos">EXPERIENCIA</h3>
+                <p className="fuente-texto">
                   Gestiona tu cordura y enfrenta aquello
                   que te acecha en la oscuridad.
                 </p>
@@ -192,21 +239,25 @@ function Inicio() {
               <div className="game-image-placeholder">
                 <span>imagen epica 3</span>
               </div>
+
               <div className="game-highlight-text">
-                <h3>LAS AMENAZAS</h3>
-                <p>
+                <h3 className="fuente-titulos">LAS AMENAZAS</h3>
+                <p className="fuente-texto">
                   No estás solo. Algo te observa...
                 </p>
               </div>
             </article>
+
           </div>
         </div>
       </section>
 
 
+      {/* GALERÍA 3D */}
       <section className="gallery-section" id="galeria-3d">
+
         <div className="gallery-header">
-          <h2>GALERÍA 3D</h2>
+          <h2 className="fuente-titulos">GALERÍA 3D</h2>
 
           <div className="gallery-divider"></div>
 
@@ -214,6 +265,7 @@ function Inicio() {
             <button type="button" aria-label="Modelo anterior">
               ‹
             </button>
+
             <button type="button" aria-label="Modelo siguiente">
               ›
             </button>
@@ -221,40 +273,50 @@ function Inicio() {
         </div>
 
         <div className="gallery-model-card">
+
           <div className="model-viewer-placeholder">
-            <div className="model-placeholder-message">
-              <span className="model-placeholder-label">
-                Modelo 3D del personaje
-              </span>
-              <p>Modelo epico del personaje</p>
-            </div>
+
+            <Modelo3D
+              modelo={`${import.meta.env.BASE_URL}models/presencia.glb`}
+            />
 
             <div className="model-tools">
               <span>↻ GIRAR</span>
               <span>⌕ ZOOM</span>
-
             </div>
+
           </div>
+
           <div className="model-info">
-            <p className="model-category">Enemigos</p>
-            <h3>FRENESI</h3>
-            <p>
-              Frenesi es un personaje que se llama frenesi
+            <p className="model-category fuente-texto">
+              Enemigos
+            </p>
+
+            <h3 className="fuente-titulos">
+              PRESENCIA
+            </h3>
+
+            <p className="fuente-texto">
+              Una figura que acecha entre las sombras.
             </p>
           </div>
+
         </div>
       </section>
 
+
+      {/* FEEDBACK Y DESCARGA */}
       <section className="feedback-section" id="build">
 
         <div className="feedback-panel">
+
           <div className="build-column">
 
-            <h2 className="feedback-main-title">
+            <h2 className="feedback-main-title fuente-titulos">
               PRUEBA EL JUEGO
             </h2>
 
-            <p className="build-intro">
+            <p className="build-intro fuente-texto">
               Sé de los primeros en experimentar Ashes of Mind
               y ayúdanos a mejorar el juego.
             </p>
@@ -262,6 +324,7 @@ function Inicio() {
             <div className="download-card">
 
               <div className="download-description">
+
                 <div className="download-icon" aria-hidden="true">
                   <svg viewBox="0 0 48 48" fill="none">
                     <path
@@ -275,11 +338,15 @@ function Inicio() {
                 </div>
 
                 <div>
-                  <h3>BUILD ASHES OF MIND</h3>
-                  <p>
+                  <h3 className="fuente-titulos">
+                    BUILD ASHES OF MIND
+                  </h3>
+
+                  <p className="fuente-texto">
                     Accede a la versión temprana del juego
                   </p>
                 </div>
+
               </div>
 
               <a
@@ -297,25 +364,28 @@ function Inicio() {
                     />
                   </svg>
                 </span>
+
                 <span>DESCARGAR BUILD</span>
               </a>
 
             </div>
           </div>
 
+
           <div className="feedback-column">
 
             <div className="bug-card">
 
-              <h2 className="feedback-title">
+              <h2 className="feedback-title fuente-titulos">
                 ¿ENCONTRASTE UN BUG O TIENES UNA SUGERENCIA?
               </h2>
 
-              <p className="feedback-subtitle">
+              <p className="feedback-subtitle fuente-texto">
                 Tu opinión nos ayuda a crear una mejor experiencia.
               </p>
 
               <form className="bug-form" onSubmit={handleSubmit}>
+
                 <label
                   className="visually-hidden"
                   htmlFor="bug-description"
@@ -363,18 +433,23 @@ function Inicio() {
                 </button>
 
                 {feedbackMessage && (
-                  <p role="status">{feedbackMessage}</p>
+                  <p className="fuente-texto" role="status">
+                    {feedbackMessage}
+                  </p>
                 )}
-              </form>
 
+              </form>
             </div>
+
 
             <div className="survey-card">
 
               <div className="survey-copy">
-                <h3>ENCUESTA DE FEEDBACK - UI/UX</h3>
+                <h3 className="fuente-titulos">
+                  ENCUESTA DE FEEDBACK - UI/UX
+                </h3>
 
-                <p>
+                <p className="fuente-texto">
                   Cuéntanos cómo te ha parecido los controles, interfaces y
                   botones del juego para mejorar la experiencia de usuario.
                 </p>
@@ -385,19 +460,20 @@ function Inicio() {
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdtJzTVJzbCghjB6Cg-4SmKqbkjmNlL9s_5_b8qCamOdztICw/viewform?usp=publish-editor"
               >
                 <span>IR A LA ENCUESTA</span>
-                <span className="survey-arrow" aria-hidden="true">
-                  ›
-                </span>
+                <span className="survey-arrow" aria-hidden="true">›</span>
               </a>
 
             </div>
 
+
             <div className="survey-card">
 
               <div className="survey-copy">
-                <h3>ENCUESTA DE EXPERIENCIA</h3>
+                <h3 className="fuente-titulos">
+                  ENCUESTA DE EXPERIENCIA
+                </h3>
 
-                <p>
+                <p className="fuente-texto">
                   Cuéntanos cómo te ha funcionado el juego en esta breve encuesta.
                 </p>
               </div>
@@ -407,9 +483,7 @@ function Inicio() {
                 href="https://docs.google.com/forms/d/e/1FAIpQLScChD-cC67Cvvu125EsSKWfVErf_3Uy4r9snnKEEswEWj9Smw/viewform?usp=publish-editor"
               >
                 <span>IR A LA ENCUESTA</span>
-                <span className="survey-arrow" aria-hidden="true">
-                  ›
-                </span>
+                <span className="survey-arrow" aria-hidden="true">›</span>
               </a>
 
             </div>
@@ -419,7 +493,9 @@ function Inicio() {
       </section>
 
 
+      {/* FOOTER */}
       <footer className="footer" id="draugr">
+
         <img
           className="footer-logo"
           src={`${import.meta.env.BASE_URL}images/Logo.png`}
@@ -431,40 +507,67 @@ function Inicio() {
         </p>
 
         <nav className="footer-socials" aria-label="Redes sociales">
+
           <a href="#instagram" aria-label="Instagram">
-            <img src={`${import.meta.env.BASE_URL}images/instagram.png`} alt="" />
+            <img
+              src={`${import.meta.env.BASE_URL}images/instagram.png`}
+              alt=""
+            />
           </a>
 
-          <a href="https://www.youtube.com/@DraugrStudios2026" aria-label="YouTube">
-            <img src={`${import.meta.env.BASE_URL}images/youtube.png`} alt="" />
+          <a
+            href="https://www.youtube.com/@DraugrStudios2026"
+            aria-label="YouTube"
+          >
+            <img
+              src={`${import.meta.env.BASE_URL}images/youtube.png`}
+              alt=""
+            />
           </a>
 
-          <a href="mailto:contacto@draugrstudio.com" aria-label="Correo electrónico">
-            <img src={`${import.meta.env.BASE_URL}images/gmail.png`} alt="" />
+          <a
+            href="mailto:contacto@draugrstudio.com"
+            aria-label="Correo electrónico"
+          >
+            <img
+              src={`${import.meta.env.BASE_URL}images/gmail.png`}
+              alt=""
+            />
           </a>
 
           <a href="#tiktok" aria-label="TikTok">
-            <img src={`${import.meta.env.BASE_URL}images/tiktok.png`} alt="" />
+            <img
+              src={`${import.meta.env.BASE_URL}images/tiktok.png`}
+              alt=""
+            />
           </a>
 
           <a href="#discord" aria-label="Discord">
-            <img src={`${import.meta.env.BASE_URL}images/discord.png`} alt="" />
+            <img
+              src={`${import.meta.env.BASE_URL}images/discord.png`}
+              alt=""
+            />
           </a>
+
         </nav>
 
         <div className="footer-divider"></div>
 
-        <p className="copyright">
+        <p className="copyright fuente-texto">
           © 2026 Draugr Studio. Todos los derechos reservados.
         </p>
+
       </footer>
+
     </main>
-  )
+  );
 }
+
 
 function App() {
   return (
     <HashRouter>
+
       <ScrollToTop />
 
       <Routes>
@@ -478,6 +581,7 @@ function App() {
         <Route path="/Carrito" element={<Carrito />} />
         <Route path="/FinalizarCompra" element={<FinalizarCompra />} />
       </Routes>
+
     </HashRouter>
   );
 }

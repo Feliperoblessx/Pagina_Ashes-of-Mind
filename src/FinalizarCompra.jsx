@@ -257,8 +257,7 @@ function FinalizarCompra() {
                                     <h2 className="fuente-titulos">PAGO</h2>
 
                                     <p className="checkout-payment-note fuente-texto">
-                                        Esta sección es una demostración.
-                                        No se realizará ningún cobro.
+                                        Pague
                                     </p>
 
                                     <div className="checkout-payment-options">
@@ -318,8 +317,7 @@ function FinalizarCompra() {
 
                                         {metodoPago === 'transferencia' && (
                                             <p className="checkout-transfer-info fuente-texto">
-                                                Se mostraría aquí la información
-                                                de la plataforma de pago elegida.
+                                                Accede a tu plataforma elegida o paga con tarjeta (porfa)
                                             </p>
                                         )}
 

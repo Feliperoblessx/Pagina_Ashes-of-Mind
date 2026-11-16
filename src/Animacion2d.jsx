@@ -57,7 +57,7 @@ function Animacion2d() {
 
                     <a
                         className="animacion-button fuente-titulos"
-                        href="#animacion-video"
+                        href="https://youtu.be/gs7xWU9IL7w"
                     >
                         VER EL MONSTRUO
                     </a>
