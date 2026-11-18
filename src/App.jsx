@@ -62,7 +62,6 @@ function Inicio() {
   };
 
 
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -244,9 +243,14 @@ function Inicio() {
 
           <div className="game-highlights">
 
+            {/* CONCEPTO */}
             <article className="game-highlight">
               <div className="game-image-placeholder">
-                <span>imagen epica 1</span>
+                <img
+                  src={`${import.meta.env.BASE_URL}images/ashes-concepto.png`}
+                  alt="Escenario de Ashes of Mind"
+                  className="game-highlight-image"
+                />
               </div>
 
               <div className="game-highlight-text">
@@ -258,9 +262,14 @@ function Inicio() {
               </div>
             </article>
 
+            {/* EXPERIENCIA */}
             <article className="game-highlight">
               <div className="game-image-placeholder">
-                <span>imagen epica 2</span>
+                <img
+                  src={`${import.meta.env.BASE_URL}images/ashes-experiencia.png`}
+                  alt="Experiencia de juego de Ashes of Mind"
+                  className="game-highlight-image"
+                />
               </div>
 
               <div className="game-highlight-text">
@@ -272,9 +281,14 @@ function Inicio() {
               </div>
             </article>
 
+            {/* LAS AMENAZAS */}
             <article className="game-highlight">
               <div className="game-image-placeholder">
-                <span>imagen epica 3</span>
+                <img
+                  src={`${import.meta.env.BASE_URL}images/ashes-amenazas.png`}
+                  className="game-highlight-image"
+                />
+                
               </div>
 
               <div className="game-highlight-text">
