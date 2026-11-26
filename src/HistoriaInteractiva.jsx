@@ -26,14 +26,6 @@ function HistoriaInteractiva() {
             </header>
 
             <section className="historia-hero">
-
-                {/* IMAGEN DE FONDO */}
-                <img
-                    className="historia-hero-image"
-                    src={`${import.meta.env.BASE_URL}images/historia-hero.png`}
-                    alt="Escenario de la historia interactiva"
-                />
-
                 <div className="historia-hero-overlay"></div>
 
                 {/* CONTENIDO DEL ENCABEZADO */}
@@ -57,10 +49,13 @@ function HistoriaInteractiva() {
 
                     <a
                         className="historia-hero-button fuente-titulos"
-                        href="#historia"
+                        href={`${import.meta.env.BASE_URL}src/historia-interactiva.html`}
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         LEER HISTORIA
                     </a>
+
                 </div>
             </section>
 
@@ -115,7 +110,7 @@ function HistoriaInteractiva() {
                         <article className="historia-personaje-card">
                             <div className="historia-personaje-image">
                                 <img
-                                    src={`${import.meta.env.BASE_URL}images/elias-keller.png`}
+                                    src={`${import.meta.env.BASE_URL}images/historia.png`}
                                 />
                             </div>
                             <h3 className="fuente-titulos">ELIAS KELLER</h3>
@@ -126,7 +121,7 @@ function HistoriaInteractiva() {
                         <article className="historia-personaje-card">
                             <div className="historia-personaje-image">
                                 <img
-                                    src={`${import.meta.env.BASE_URL}images/friedrich-keller.png`}
+                                    src={`${import.meta.env.BASE_URL}images/historia.png`}
                                 />
                             </div>
                             <h3 className="fuente-titulos">FRIEDRICH KELLER</h3>
@@ -137,7 +132,7 @@ function HistoriaInteractiva() {
                         <article className="historia-personaje-card">
                             <div className="historia-personaje-image">
                                 <img
-                                    src={`${import.meta.env.BASE_URL}images/la-entidad.png`}
+                                    src={`${import.meta.env.BASE_URL}images/historia.png`}
                                 />
                             </div>
                             <h3 className="fuente-titulos">LA ENTIDAD</h3>

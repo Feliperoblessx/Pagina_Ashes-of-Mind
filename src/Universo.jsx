@@ -167,7 +167,7 @@ function Universo() {
                     <div className="teaser-image-container">
                         <img
                             className="teaser-image"
-                            src={`${import.meta.env.BASE_URL}images/Mounstro.png`}
+                            src={`${import.meta.env.BASE_URL}images/comic.png`}
                             alt="Escena del teaser trailer de Ashes of Mind"
                         />
                     </div>
@@ -185,7 +185,7 @@ function Universo() {
 
                 <div className="historia-panel">
                     <div className="historia-content">
-                        <h2 className="fuente-titulos">BEFORE THE ASHES</h2>
+                        <h2 className="fuente-titulos">El descenso a la locura</h2>
 
                         <p className="fuente-texto">
                             Explora una historia interactiva que revela

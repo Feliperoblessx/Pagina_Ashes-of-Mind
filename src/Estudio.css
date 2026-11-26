@@ -72,7 +72,7 @@
   min-width: 225px;
   padding: 15px 25px;
   border-radius: 6px;
-  background: #1976bd;
+  background: #4B1F84;
   color: #fff;
   text-decoration: none;
   font-size: 16px;
@@ -81,7 +81,7 @@
 }
 
 .estudio-hero-button:hover {
-  background: #145f98;
+  background: #35145f;
 }
 
 .estudio-hero-button span {
@@ -239,10 +239,47 @@
 }
 
 .equipo-logo {
-  width: 160px;
-  height: 85px;
+  width: 200px;
+  height: 160px;
   object-fit: contain;
   margin-top: auto;
+}
+
+/* BOTONES DE REDES DEL EQUIPO */
+.equipo-redes {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 260px;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.equipo-redes a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 48px;
+    padding: 14px 20px;
+    box-sizing: border-box;
+
+    background: #4B1F84;
+    color: #fff;
+    border-radius: 7px;
+    text-decoration: none;
+
+    font-family: "Adonais", serif;
+    font-size: 17px;
+    letter-spacing: 1px;
+
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.equipo-redes a:hover {
+    background: #35145f;
+    transform: scale(1.04);
 }
 
 

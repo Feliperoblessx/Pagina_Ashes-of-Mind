@@ -30,48 +30,45 @@ function Estudio() {
                 </Link>
             </header>
 
+            {/* HERO */}
+            <section className="estudio-hero">
+                <img
+                    className="estudio-hero-logo"
+                    src={`${import.meta.env.BASE_URL}images/logo-estudio.png`}
+                    alt="Logo de Draugr Studio"
+                />
 
-<section className="estudio-hero">
-    <img
-        className="estudio-hero-logo"
-        src={`${import.meta.env.BASE_URL}images/logo-estudio.png`}
-        alt="Logo de Draugr Studio"
-    />
+                <div className="estudio-hero-overlay"></div>
 
-    <div className="estudio-hero-overlay"></div>
+                <div className="estudio-hero-content">
+                    <h1 className="estudio-titulo fuente-titulos">
+                        DRAUGR STUDIOS
+                    </h1>
 
-    <div className="estudio-hero-content">
-        <h1 className="estudio-titulo fuente-titulos">
-            DRAUGR STUDIOS
-        </h1>
+                    <p className="estudio-descripcion fuente-texto">
+                        Draugr Studios es un estudio creativo enfocado
+                        en desarrollar universos narrativos que
+                        conectan videojuegos, animación, cómics e
+                        historias interactivas.
+                    </p>
 
-        <p className="estudio-descripcion fuente-texto">
-            Draugr Studios es un estudio creativo enfocado
-            en desarrollar universos narrativos que
-            conectan videojuegos, animación, cómics e
-            historias interactivas.
-        </p>
+                    <a
+                        className="estudio-hero-button fuente-titulos"
+                        href="#equipo"
+                        onClick={(e) => {
+                            e.preventDefault();
 
-        <a
-            className="estudio-hero-button fuente-titulos"
-            href="#equipo"
-            onClick={(e) => {
-                e.preventDefault();
-
-                document.getElementById('equipo')?.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }}
-        >
-            EQUIPO DE TRABAJO
-            <span></span>
-        </a>
-    </div>
-</section>
-
-
-            
+                            document.getElementById('equipo')?.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }}
+                    >
+                        EQUIPO DE TRABAJO
+                        <span></span>
+                    </a>
+                </div>
+            </section>
 
             {/* VISIÓN */}
             <section className="estudio-vision">
@@ -121,7 +118,7 @@ function Estudio() {
 
                     <div className="equipo-grid">
 
-                        {/* INTEGRANTE 1 */}
+                        {/* INTEGRANTE 1: FELIPE */}
                         <article className="equipo-card">
                             <img
                                 className="equipo-foto"
@@ -137,9 +134,29 @@ function Estudio() {
                                 src={`${import.meta.env.BASE_URL}images/logo-felipe.png`}
                                 alt="Logo de Felipe Robles"
                             />
+
+                            <div className="equipo-redes">
+                                <a
+                                    className="equipo-redes-button fuente-titulos"
+                                    href="https://www.linkedin.com/in/felipe-robles-663724441/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    LINKEDIN
+                                </a>
+
+                                <a
+                                    className="equipo-redes-button fuente-titulos"
+                                    href="https://www.behance.net/rubielrobles"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    BEHANCE
+                                </a>
+                            </div>
                         </article>
 
-                        {/* INTEGRANTE 2 */}
+                        {/* INTEGRANTE 2: DAVID */}
                         <article className="equipo-card">
                             <img
                                 className="equipo-foto"
@@ -155,9 +172,29 @@ function Estudio() {
                                 src={`${import.meta.env.BASE_URL}images/logo-david.png`}
                                 alt="Logo de David González"
                             />
+
+                            <div className="equipo-redes">
+                                <a
+                                    className="equipo-redes-button fuente-titulos"
+                                    href="https://www.linkedin.com/in/david-gonzalez-372727216/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    LINKEDIN
+                                </a>
+
+                                <a
+                                    className="equipo-redes-button fuente-titulos"
+                                    href="https://www.artstation.com/aleind"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Artstation
+                                </a>
+                            </div>
                         </article>
 
-                        {/* INTEGRANTE 3 */}
+                        {/* INTEGRANTE 3: DANIEL */}
                         <article className="equipo-card">
                             <img
                                 className="equipo-foto"
@@ -173,6 +210,26 @@ function Estudio() {
                                 src={`${import.meta.env.BASE_URL}images/logo-daniel.png`}
                                 alt="Logo de Daniel Sainca"
                             />
+
+                            <div className="equipo-redes">
+                                <a
+                                    className="equipo-redes-button fuente-titulos"
+                                    href="https://www.linkedin.com/in/daniel-sainea/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    LINKEDIN
+                                </a>
+
+                                <a
+                                    className="equipo-redes-button fuente-titulos"
+                                    href="https://www.behance.net/danielsainea"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    BEHANCE
+                                </a>
+                            </div>
                         </article>
 
                     </div>
@@ -209,7 +266,10 @@ function Estudio() {
                         />
                     </a>
 
-                    <a href="mailto:contacto@draugrstudio.com" aria-label="Correo electrónico">
+                    <a
+                        href="mailto:contacto@draugrstudio.com"
+                        aria-label="Correo electrónico"
+                    >
                         <img
                             src={`${import.meta.env.BASE_URL}images/gmail.png`}
                             alt=""

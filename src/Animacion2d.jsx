@@ -90,15 +90,10 @@ function Animacion2d() {
                     </div>
 
                     <div className="sinopsis-image-container">
-                        {/*imagen*/}
-                        {/*<img className="sinopsis-image"
+                        <img className="sinopsis-image"
                             src={`${import.meta.env.BASE_URL}images/sinopsis-monstruo.png`}
                             alt="Escena de la animación 2D El Monstruo" />
-                         */}
 
-                        <div className="sinopsis-image-placeholder fuente-texto">
-                            IMAGEN DE LA ANIMACIÓN
-                        </div>
                     </div>
                 </div>
             </section>
@@ -119,19 +114,12 @@ function Animacion2d() {
                         {/* PERSONAJE 1 */}
                         <article className="personaje-card">
                             <div className="personaje-image-container">
-                                {/* Cuando tengas el archivo, reemplaza el bloque inferior por el img */}
-                                {/*
-          <img
-            className="personaje-image"
-            src={`${import.meta.env.BASE_URL}images/monstruo.png`}
-            alt="El Monstruo"
-          />
-          */}
-                                <div className="personaje-image-placeholder fuente-texto">
-                                    IMAGEN DEL MONSTRUO
-                                </div>
+                                <img
+                                    className="personaje-image"
+                                    src={`${import.meta.env.BASE_URL}images/monstruo1.png`}
+                                    alt="El Monstruo"
+                                />
                             </div>
-
                             <h3 className="fuente-titulos">EL MONSTRUO</h3>
                             <p className="fuente-texto">????????</p>
                         </article>
@@ -139,16 +127,11 @@ function Animacion2d() {
                         {/* PERSONAJE 2 */}
                         <article className="personaje-card">
                             <div className="personaje-image-container">
-                                {/*
-          <img
-            className="personaje-image"
-            src={`${import.meta.env.BASE_URL}images/arthur-neuman.png`}
-            alt="Arthur Neuman"
-          />
-          */}
-                                <div className="personaje-image-placeholder fuente-texto">
-                                    IMAGEN DE ARTHUR
-                                </div>
+                                <img
+                                    className="personaje-image"
+                                    src={`${import.meta.env.BASE_URL}images/detective.png`}
+                                    alt="Arthur Neuman"
+                                />
                             </div>
 
                             <h3 className="fuente-titulos">ARTHUR NEUMAN</h3>
@@ -160,16 +143,11 @@ function Animacion2d() {
                         {/* PERSONAJE 3 */}
                         <article className="personaje-card">
                             <div className="personaje-image-container">
-                                {/*
-          <img
-            className="personaje-image"
-            src={`${import.meta.env.BASE_URL}images/doctor-wagner.png`}
-            alt="Doctor Wagner"
-          />
-          */}
-                                <div className="personaje-image-placeholder fuente-texto">
-                                    IMAGEN DEL DOCTOR
-                                </div>
+                                <img
+                                    className="personaje-image"
+                                    src={`${import.meta.env.BASE_URL}images/doctor-wagner.png`}
+                                    alt="Doctor Wagner"
+                                />
                             </div>
 
                             <h3 className="fuente-titulos">DOCTOR WAGNER</h3>

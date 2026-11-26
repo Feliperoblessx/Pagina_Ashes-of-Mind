@@ -118,17 +118,11 @@ function Comic() {
                         {/* PERSONAJE 1 */}
                         <article className="personaje-card">
                             <div className="personaje-image-container">
-                                {/* Cuando tengas el archivo, reemplaza el bloque inferior por el img */}
-                                {/*
-          <img
-            className="personaje-image"
-            src={`${import.meta.env.BASE_URL}images/monstruo.png`}
-            alt="El Monstruo"
-          />
-          */}
-                                <div className="personaje-image-placeholder fuente-texto">
-                                    IMAGEN Marcus
-                                </div>
+                                <img
+                                    className="personaje-image"
+                                    src={`${import.meta.env.BASE_URL}images/marcus.png`}
+                                    alt="El Monstruo"
+                                />
                             </div>
 
                             <h3 className="fuente-titulos">Marcus</h3>
@@ -138,16 +132,11 @@ function Comic() {
                         {/* PERSONAJE 2 */}
                         <article className="personaje-card">
                             <div className="personaje-image-container">
-                                {/*
-          <img
-            className="personaje-image"
-            src={`${import.meta.env.BASE_URL}images/arthur-neuman.png`}
-            alt="Arthur Neuman"
-          />
-          */}
-                                <div className="personaje-image-placeholder fuente-texto">
-                                    IMAGEN DE ARTHUR
-                                </div>
+                                <img
+                                    className="personaje-image"
+                                    src={`${import.meta.env.BASE_URL}images/neuman.png`}
+                                    alt="Arthur Neuman"
+                                />
                             </div>
 
                             <h3 className="fuente-titulos">ARTHUR NEUMAN</h3>
@@ -159,16 +148,11 @@ function Comic() {
                         {/* PERSONAJE 3 */}
                         <article className="personaje-card">
                             <div className="personaje-image-container">
-                                {/*
-          <img
-            className="personaje-image"
-            src={`${import.meta.env.BASE_URL}images/doctor-wagner.png`}
-            alt="Doctor Wagner"
-          />
-          */}
-                                <div className="personaje-image-placeholder fuente-texto">
-                                    IMAGEN DE NINA
-                                </div>
+                                <img
+                                    className="personaje-image"
+                                    src={`${import.meta.env.BASE_URL}images/nina.png`}
+                                    alt="Doctor Wagner"
+                                />
                             </div>
 
                             <h3 className="fuente-titulos">Nina</h3>
