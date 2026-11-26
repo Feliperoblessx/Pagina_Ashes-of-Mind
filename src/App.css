@@ -1,4 +1,6 @@
 :root {
+  /* Vite adapta esta ruta relativa a la base de GitHub Pages al compilar. */
+  --ashes-cursor: url("./images/icono-mouse.png") 14 26, auto;
   font-family: "Bell MT", Georgia, serif;
   color: #e8e8e5;
   background: #080b0e;
@@ -16,6 +18,13 @@
 body {
   margin: 0;
   min-width: 320px;
+}
+
+/* Mantiene el cursor personalizado también sobre enlaces y controles. */
+html,
+body,
+body * {
+  cursor: var(--ashes-cursor) !important;
 }
 
 a {
