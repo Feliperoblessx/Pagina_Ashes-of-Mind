@@ -416,7 +416,7 @@ function Merch() {
                         <img src={`${import.meta.env.BASE_URL}images/youtube.png`} alt="" />
                     </a>
 
-                    <a href="mailto:contacto@draugrstudio.com" aria-label="Correo electrónico">
+                    <a href="mailto:studiosdraugr@gmail.com" aria-label="Correo electrónico">
                         <img src={`${import.meta.env.BASE_URL}images/gmail.png`} alt="" />
                     </a>
 

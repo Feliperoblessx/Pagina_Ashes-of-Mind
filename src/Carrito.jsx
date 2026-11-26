@@ -457,7 +457,7 @@ function Carrito() {
                     </a>
 
                     <a
-                        href="mailto:contacto@draugrstudio.com"
+                        href="mailto:studiosdraugr@gmail.com"
                         aria-label="Correo electrónico"
                     >
                         <img

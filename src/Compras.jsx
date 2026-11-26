@@ -38,6 +38,18 @@ function Compras() {
         })
         : '';
 
+    // Abre Gmail en una pestaña nueva con destinatario, asunto y mensaje ya escritos
+    const asunto = `Ayuda con mi compra ${compra?.id || ''}`.trim();
+    const cuerpo = compra
+        ? `Hola Draugr Studio, necesito ayuda con mi compra (${compra.id}).\n\n`
+        : 'Hola Draugr Studio, necesito ayuda.\n\n';
+
+    const enlaceAyuda =
+        `https://mail.google.com/mail/?view=cm&fs=1` +
+        `&to=studiosdraugr@gmail.com` +
+        `&su=${encodeURIComponent(asunto)}` +
+        `&body=${encodeURIComponent(cuerpo)}`;
+
     return (
         <main className="purchase-page">
 
@@ -228,7 +240,9 @@ function Compras() {
 
                             <a
                                 className="purchase-help fuente-texto"
-                                href="mailto:studiosdraugr@gmail.com"
+                                href={enlaceAyuda}
+                                target="_blank"
+                                rel="noopener noreferrer"
                             >
                                 ¿Necesitas ayuda?
                             </a>
