@@ -438,8 +438,8 @@ a {
 }
 
 .gallery-controls button {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   padding: 0;
   border: 1px solid #343d43;
   border-radius: 50%;
@@ -530,6 +530,7 @@ a {
 }
 
 .model-tools button {
+  min-height: 44px;
   padding: 8px 12px;
   border: 1px solid #34434c;
   border-radius: 20px;
@@ -557,6 +558,14 @@ a {
   background: rgba(0, 0, 0, 0.45);
   color: #526069;
   cursor: not-allowed;
+}
+
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  opacity: 0.58;
+  filter: saturate(0.65);
 }
 
 .model-info {

@@ -132,7 +132,11 @@
 
 .merch-category {
   position: relative;
+  min-height: 44px;
   padding: 12px 0;
+
+  display: inline-flex;
+  align-items: center;
 
   color: #999;
   font-family: "Bell MT", Georgia, serif;
@@ -180,7 +184,7 @@
   border-radius: 13px;
   background: #090c0e;
 
-  scroll-margin-top: 25px;
+  scroll-margin-top: 110px;
 }
 
 /* INFORMACIÓN DEL PRODUCTO */
@@ -227,8 +231,8 @@
 }
 
 .merch-size {
-  width: 20px;
-  height: 20px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -238,7 +242,7 @@
 
   color: #ddd;
   font-family: "Bell MT", Georgia, serif;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 /* PRECIO */
