@@ -55,7 +55,7 @@ function Comic() {
 
                     <a
                         className="animacion-button fuente-titulos"
-                        href="https://archive.org/details/comic-version-web-merged">
+                        href="https://online.flippingbook.com/view/760532642/">
                         Leer Comic
                     </a>
                 </div>
