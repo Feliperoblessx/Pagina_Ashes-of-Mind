@@ -55,8 +55,7 @@ function Comic() {
 
                     <a
                         className="animacion-button fuente-titulos"
-                        href="#animacion-video"
-                    >
+                        href="https://archive.org/details/comic-version-web-merged">
                         Leer Comic
                     </a>
                 </div>
