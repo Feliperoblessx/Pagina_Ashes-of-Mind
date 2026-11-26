@@ -1,18 +1,19 @@
 
-import { useState } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import './App.css';
 
-import Universo from './Universo.jsx';
-import Estudio from './Estudio.jsx';
-import Merch from './Merch.jsx';
-import Animacion2d from './Animacion2d.jsx';
-import Comic from './Comic.jsx';
-import HistoriaInteractiva from './HistoriaInteractiva.jsx';
-import Carrito from './Carrito.jsx';
 import ScrollToTop from './ScrollToTop.jsx';
-import FinalizarCompra from './FinalizarCompra.jsx';
-import Compras from './Compras.jsx';
-import Modelo3D from './modelo3d.jsx';
+
+const Universo = lazy(() => import('./Universo.jsx'));
+const Estudio = lazy(() => import('./Estudio.jsx'));
+const Merch = lazy(() => import('./Merch.jsx'));
+const Animacion2d = lazy(() => import('./Animacion2d.jsx'));
+const Comic = lazy(() => import('./Comic.jsx'));
+const HistoriaInteractiva = lazy(() => import('./HistoriaInteractiva.jsx'));
+const Carrito = lazy(() => import('./Carrito.jsx'));
+const FinalizarCompra = lazy(() => import('./FinalizarCompra.jsx'));
+const Compras = lazy(() => import('./Compras.jsx'));
+const Modelo3D = lazy(() => import('./modelo3d.jsx'));
 
 import {
   HashRouter,
@@ -159,6 +160,8 @@ function Inicio() {
             className="hero-logo"
             src={`${import.meta.env.BASE_URL}images/ashes-logo.png`}
             alt="Ashes of Mind"
+            fetchPriority="high"
+            decoding="async"
           />
 
           <p className="hero-description fuente-texto">
@@ -219,6 +222,8 @@ function Inicio() {
               className="hero-logo"
               src={`${import.meta.env.BASE_URL}images/ashes-logo.png`}
               alt="Ashes of Mind"
+              loading="lazy"
+              decoding="async"
             />
 
             <p className="game-description fuente-texto">
@@ -251,6 +256,8 @@ function Inicio() {
                   src={`${import.meta.env.BASE_URL}images/ashes-concepto.png`}
                   alt="Escenario de Ashes of Mind"
                   className="game-highlight-image"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
@@ -270,6 +277,8 @@ function Inicio() {
                   src={`${import.meta.env.BASE_URL}images/ashes-experiencia.png`}
                   alt="Experiencia de juego de Ashes of Mind"
                   className="game-highlight-image"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
@@ -288,6 +297,9 @@ function Inicio() {
                 <img
                   src={`${import.meta.env.BASE_URL}images/ashes-amenazas.png`}
                   className="game-highlight-image"
+                  alt="Amenazas de Ashes of Mind"
+                  loading="lazy"
+                  decoding="async"
                 />
                 
               </div>
@@ -343,11 +355,13 @@ function Inicio() {
           {/* VISUALIZADOR 3D */}
           <div className="model-viewer-placeholder">
 
-            <Modelo3D
-              key={modelos[modeloActual].archivo}
-              modelo={modelos[modeloActual].archivo}
-              margen={modelos[modeloActual].margen}
-            />
+            <Suspense fallback={<div className="model-loading" role="status">CARGANDO MODELO...</div>}>
+              <Modelo3D
+                key={modelos[modeloActual].archivo}
+                modelo={modelos[modeloActual].archivo}
+                margen={modelos[modeloActual].margen}
+              />
+            </Suspense>
 
           </div>
 
@@ -637,19 +651,21 @@ function App() {
 
       <ScrollToTop />
 
-      <Routes>
-        <Route path="/" element={<Inicio />} />
-        <Route path="/universo" element={<Universo />} />
-        <Route path="/estudio" element={<Estudio />} />
-        <Route path="/merch" element={<Merch />} />
-        <Route path="/Animacion2d" element={<Animacion2d />} />
-        <Route path="/Comic" element={<Comic />} />
-        <Route path="/HistoriaInteractiva" element={<HistoriaInteractiva />} />
-        <Route path="/Carrito" element={<Carrito />} />
-        <Route path="/FinalizarCompra" element={<FinalizarCompra />} />
-        <Route path="/Compras" element={<Compras />} />
-        <Route path="/Compras/:id" element={<Compras />} />
-      </Routes>
+      <Suspense fallback={<div className="route-loading" role="status">CARGANDO...</div>}>
+        <Routes>
+          <Route path="/" element={<Inicio />} />
+          <Route path="/universo" element={<Universo />} />
+          <Route path="/estudio" element={<Estudio />} />
+          <Route path="/merch" element={<Merch />} />
+          <Route path="/Animacion2d" element={<Animacion2d />} />
+          <Route path="/Comic" element={<Comic />} />
+          <Route path="/HistoriaInteractiva" element={<HistoriaInteractiva />} />
+          <Route path="/Carrito" element={<Carrito />} />
+          <Route path="/FinalizarCompra" element={<FinalizarCompra />} />
+          <Route path="/Compras" element={<Compras />} />
+          <Route path="/Compras/:id" element={<Compras />} />
+        </Routes>
+      </Suspense>
 
     </HashRouter>
   );

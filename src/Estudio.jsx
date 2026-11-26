@@ -124,6 +124,8 @@ function Estudio() {
                                 className="equipo-foto"
                                 src={`${import.meta.env.BASE_URL}images/felipe.jpg`}
                                 alt="Fotografía de Felipe Robles"
+                                loading="lazy"
+                                decoding="async"
                             />
 
                             <h3 className="fuente-titulos">FELIPE ROBLES</h3>
@@ -133,6 +135,8 @@ function Estudio() {
                                 className="equipo-logo"
                                 src={`${import.meta.env.BASE_URL}images/logo-felipe.png`}
                                 alt="Logo de Felipe Robles"
+                                loading="lazy"
+                                decoding="async"
                             />
 
                             <div className="equipo-redes">
@@ -162,6 +166,8 @@ function Estudio() {
                                 className="equipo-foto"
                                 src={`${import.meta.env.BASE_URL}images/david.jpg`}
                                 alt="Fotografía de David González"
+                                loading="lazy"
+                                decoding="async"
                             />
 
                             <h3 className="fuente-titulos">DAVID GONZALEZ</h3>
@@ -171,6 +177,8 @@ function Estudio() {
                                 className="equipo-logo"
                                 src={`${import.meta.env.BASE_URL}images/logo-david.png`}
                                 alt="Logo de David González"
+                                loading="lazy"
+                                decoding="async"
                             />
 
                             <div className="equipo-redes">
@@ -200,6 +208,8 @@ function Estudio() {
                                 className="equipo-foto"
                                 src={`${import.meta.env.BASE_URL}images/daniel.jpg`}
                                 alt="Fotografía de Daniel Sainca"
+                                loading="lazy"
+                                decoding="async"
                             />
 
                             <h3 className="fuente-titulos">DANIEL SAINEA</h3>
@@ -209,6 +219,8 @@ function Estudio() {
                                 className="equipo-logo"
                                 src={`${import.meta.env.BASE_URL}images/logo-daniel.png`}
                                 alt="Logo de Daniel Sainca"
+                                loading="lazy"
+                                decoding="async"
                             />
 
                             <div className="equipo-redes">

@@ -111,6 +111,9 @@ function HistoriaInteractiva() {
                             <div className="historia-personaje-image">
                                 <img
                                     src={`${import.meta.env.BASE_URL}images/historia.png`}
+                                    alt="Elias Keller"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
                             <h3 className="fuente-titulos">ELIAS KELLER</h3>
@@ -122,6 +125,9 @@ function HistoriaInteractiva() {
                             <div className="historia-personaje-image">
                                 <img
                                     src={`${import.meta.env.BASE_URL}images/historia.png`}
+                                    alt="Friedrich Keller"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
                             <h3 className="fuente-titulos">FRIEDRICH KELLER</h3>
@@ -133,6 +139,9 @@ function HistoriaInteractiva() {
                             <div className="historia-personaje-image">
                                 <img
                                     src={`${import.meta.env.BASE_URL}images/historia.png`}
+                                    alt="La entidad"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
                             <h3 className="fuente-titulos">LA ENTIDAD</h3>

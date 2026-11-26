@@ -92,7 +92,9 @@ function Animacion2d() {
                     <div className="sinopsis-image-container">
                         <img className="sinopsis-image"
                             src={`${import.meta.env.BASE_URL}images/sinopsis-monstruo.png`}
-                            alt="Escena de la animación 2D El Monstruo" />
+                            alt="Escena de la animación 2D El Monstruo"
+                            loading="lazy"
+                            decoding="async" />
 
                     </div>
                 </div>
@@ -118,6 +120,8 @@ function Animacion2d() {
                                     className="personaje-image"
                                     src={`${import.meta.env.BASE_URL}images/monstruo1.png`}
                                     alt="El Monstruo"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
                             <h3 className="fuente-titulos">EL MONSTRUO</h3>
@@ -131,6 +135,8 @@ function Animacion2d() {
                                     className="personaje-image"
                                     src={`${import.meta.env.BASE_URL}images/detective.png`}
                                     alt="Arthur Neuman"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
 
@@ -147,6 +153,8 @@ function Animacion2d() {
                                     className="personaje-image"
                                     src={`${import.meta.env.BASE_URL}images/doctor-wagner.png`}
                                     alt="Doctor Wagner"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
 

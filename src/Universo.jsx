@@ -83,6 +83,8 @@ function Universo() {
                             className="teaser-image"
                             src={`${import.meta.env.BASE_URL}images/imagen-Ashes.png`}
                             alt="Escena del teaser trailer de Ashes of Mind"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                 </div>
@@ -127,6 +129,8 @@ function Universo() {
                             className="teaser-image"
                             src={`${import.meta.env.BASE_URL}images/Mounstro.png`}
                             alt="Escena del teaser trailer de Ashes of Mind"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                 </div>
@@ -169,6 +173,8 @@ function Universo() {
                             className="teaser-image"
                             src={`${import.meta.env.BASE_URL}images/comic.png`}
                             alt="Escena del teaser trailer de Ashes of Mind"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                 </div>

@@ -90,6 +90,8 @@ function Modelo3D({ modelo, margen = 1.5 }) {
     <div className="modelo-3d">
 
       <Canvas
+        frameloop="demand"
+        dpr={[1, 1.5]}
         camera={{
           position: [0, 0, 5],
           fov: 35,
@@ -108,7 +110,6 @@ function Modelo3D({ modelo, margen = 1.5 }) {
           <Bounds
             fit
             clip
-            observe
             margin={margen}
           >
             <Center>

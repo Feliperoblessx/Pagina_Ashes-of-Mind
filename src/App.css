@@ -490,6 +490,21 @@ a {
   height: 100%;
 }
 
+.model-loading,
+.route-loading {
+  display: grid;
+  place-items: center;
+  min-height: 120px;
+  color: #8eafc2;
+  font-family: "Bell MT", Georgia, serif;
+  letter-spacing: 2px;
+}
+
+.route-loading {
+  min-height: 100vh;
+  background: #080b0e;
+}
+
 .modelo-3d canvas {
   display: block;
   width: 100% !important;

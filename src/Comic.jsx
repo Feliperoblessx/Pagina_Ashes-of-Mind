@@ -120,7 +120,9 @@ function Comic() {
                                 <img
                                     className="personaje-image"
                                     src={`${import.meta.env.BASE_URL}images/marcus.png`}
-                                    alt="El Monstruo"
+                                    alt="Marcus"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
 
@@ -135,6 +137,8 @@ function Comic() {
                                     className="personaje-image"
                                     src={`${import.meta.env.BASE_URL}images/neuman.png`}
                                     alt="Arthur Neuman"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
 
@@ -151,6 +155,8 @@ function Comic() {
                                     className="personaje-image"
                                     src={`${import.meta.env.BASE_URL}images/nina.png`}
                                     alt="Doctor Wagner"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
 

@@ -246,6 +246,8 @@ function Merch() {
                         <img
                             src={`${import.meta.env.BASE_URL}images/camiseta-ashes.png`}
                             alt="Camiseta Ashes of Mind"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                 </section>
@@ -308,6 +310,8 @@ function Merch() {
                         <img
                             src={`${import.meta.env.BASE_URL}images/gorra-ashes.png`}
                             alt="Gorra Ashes of Mind"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                 </section>
@@ -348,6 +352,8 @@ function Merch() {
                         <img
                             src={`${import.meta.env.BASE_URL}images/pines-ashes.png`}
                             alt="Pines Ashes of Mind"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                 </section>
