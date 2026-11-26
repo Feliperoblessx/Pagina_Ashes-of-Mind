@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { obtenerCompras } from './comprasStorage.js';
 import './Carrito.css';
 
 function Carrito() {
@@ -23,6 +24,9 @@ function Carrito() {
             return [];
         }
     });
+
+    // Compras realizadas (simuladas)
+    const [compras] = useState(() => obtenerCompras());
 
     // Guardar cambios
     const guardarCarrito = (nuevoCarrito) => {
@@ -329,6 +333,90 @@ function Carrito() {
                             </button>
 
                         </div>
+
+                    </div>
+
+                )}
+
+            </section>
+
+            {/* MIS COMPRAS */}
+            <section className="cart-page purchases-section">
+
+                <h1 className="cart-title fuente-titulos">
+                    MIS COMPRAS
+                </h1>
+
+                {compras.length === 0 ? (
+
+                    <div className="cart-empty">
+
+                        <p className="fuente-texto">
+                            AÚN NO TIENES COMPRAS
+                        </p>
+
+                    </div>
+
+                ) : (
+
+                    <div className="purchases-list">
+
+                        {compras.map((compra) => {
+                            const primero = compra.productos?.[0];
+                            const otros = (compra.productos?.length || 1) - 1;
+                            const imagen = primero ? obtenerImagen(primero.id) : null;
+
+                            const titulo = primero
+                                ? `${primero.nombre}${otros > 0 ? ` y ${otros} más` : ''}`
+                                : 'Compra';
+
+                            const fecha = compra.fecha
+                                ? new Date(compra.fecha).toLocaleDateString('es-CO', {
+                                    day: 'numeric',
+                                    month: 'long',
+                                    year: 'numeric'
+                                })
+                                : '';
+
+                            return (
+                                <article className="purchase-card" key={compra.id}>
+
+                                    <div className="purchase-card-main">
+
+                                        <div className="purchase-card-image">
+                                            {imagen && (
+                                                <img
+                                                    src={imagen}
+                                                    alt={primero.nombre}
+                                                    onError={(e) => {
+                                                        e.currentTarget.style.display = 'none';
+                                                    }}
+                                                />
+                                            )}
+                                        </div>
+
+                                        <div className="purchase-card-info">
+                                            <h2 className="fuente-titulos">
+                                                {titulo}
+                                            </h2>
+
+                                            <p className="fuente-texto">
+                                                {fecha} · $ {formatoPrecio(compra.total)} COP
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+                                    <Link
+                                        to={`/Compras/${compra.id}`}
+                                        className="cart-remove-button purchase-card-button fuente-titulos"
+                                    >
+                                        MÁS INFORMACIÓN
+                                    </Link>
+
+                                </article>
+                            );
+                        })}
 
                     </div>
 

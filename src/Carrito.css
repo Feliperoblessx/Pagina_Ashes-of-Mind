@@ -332,3 +332,94 @@
         box-sizing: border-box;
     }
 }
+
+/* ========================================
+   MIS COMPRAS
+======================================== */
+
+.cart-page.purchases-section {
+    margin-top: 0;
+    min-height: 0;
+}
+
+.purchases-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.purchase-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 22px 30px;
+    box-sizing: border-box;
+    background: #080c0f;
+    border: 1px solid #142d3c;
+    border-radius: 15px;
+}
+
+.purchase-card-main {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    min-width: 0;
+}
+
+.purchase-card-image {
+    flex-shrink: 0;
+    width: 150px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.purchase-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.purchase-card-info h2 {
+    color: #ffffff;
+    font-size: clamp(20px, 2.6vw, 36px);
+    margin: 0 0 8px;
+}
+
+.purchase-card-info p {
+    color: #bfc4c8;
+    font-size: 15px;
+    margin: 0;
+}
+
+.purchase-card-button {
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .cart-page.purchases-section {
+        margin-top: 0;
+    }
+
+    .purchase-card {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 18px;
+    }
+
+    .purchase-card-main {
+        gap: 18px;
+    }
+
+    .purchase-card-image {
+        width: 100px;
+        height: 75px;
+    }
+
+    .purchase-card-button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

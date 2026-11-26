@@ -11,6 +11,7 @@ import HistoriaInteractiva from './HistoriaInteractiva.jsx';
 import Carrito from './Carrito.jsx';
 import ScrollToTop from './ScrollToTop.jsx';
 import FinalizarCompra from './FinalizarCompra.jsx';
+import Compras from './Compras.jsx';
 import Modelo3D from './modelo3d.jsx';
 
 import {
@@ -646,6 +647,8 @@ function App() {
         <Route path="/HistoriaInteractiva" element={<HistoriaInteractiva />} />
         <Route path="/Carrito" element={<Carrito />} />
         <Route path="/FinalizarCompra" element={<FinalizarCompra />} />
+        <Route path="/Compras" element={<Compras />} />
+        <Route path="/Compras/:id" element={<Compras />} />
       </Routes>
 
     </HashRouter>

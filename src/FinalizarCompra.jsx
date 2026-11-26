@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { guardarCompra } from './comprasStorage.js';
 import './finalizarcompra.css';
 
 function FinalizarCompra() {
@@ -20,7 +21,6 @@ function FinalizarCompra() {
     });
 
     const [metodoPago, setMetodoPago] = useState('transferencia');
-    const [mensaje, setMensaje] = useState('');
 
     const formatoPrecio = (precio) =>
         Number(precio || 0).toLocaleString('es-CO');
@@ -34,6 +34,11 @@ function FinalizarCompra() {
     const envio = productos.length > 0 ? 8000 : 0;
     const total = subtotal + envio;
 
+    const etiquetasPago = {
+        transferencia: 'PSE / NEQUI / BANCOLOMBIA',
+        tarjeta: 'Tarjeta de crédito (simulación)'
+    };
+
     const finalizarCompra = (event) => {
         event.preventDefault();
 
@@ -42,9 +47,41 @@ function FinalizarCompra() {
             return;
         }
 
-        setMensaje(
-            '¡Gracias por tu compra! (y por el numero de tarjeta).'
-        );
+        const formulario = new FormData(event.currentTarget);
+        const leer = (campo) => String(formulario.get(campo) || '').trim();
+
+        // Por seguridad NO se guardan los datos de la tarjeta, solo el método elegido
+        const datosCompra = {
+            productos: productos.map((producto) => ({
+                id: producto.id,
+                nombre: producto.nombre,
+                talla: producto.talla || null,
+                precio: Number(producto.precio) || 0,
+                cantidad: Number(producto.cantidad) || 1
+            })),
+            subtotal,
+            envio,
+            total,
+            metodoPago: etiquetasPago[metodoPago],
+            datos: {
+                contacto: leer('contacto'),
+                nombres: leer('nombres'),
+                apellidos: leer('apellidos'),
+                direccion: leer('direccion'),
+                complemento: leer('complemento'),
+                ciudad: leer('ciudad'),
+                provincia: leer('provincia'),
+                telefono: leer('telefono'),
+                codigoPostal: leer('codigoPostal')
+            }
+        };
+
+        const compra = guardarCompra(datosCompra);
+
+        // Vaciar el carrito y mostrar la compra realizada
+        localStorage.removeItem('carritoAshes');
+
+        navigate(`/Compras/${compra.id}`);
     };
 
     return (
@@ -203,6 +240,7 @@ function FinalizarCompra() {
 
                                     <input
                                         type="text"
+                                        name="contacto"
                                         placeholder="Correo electrónico o teléfono"
                                         required
                                     />
@@ -217,21 +255,21 @@ function FinalizarCompra() {
                                     />
 
                                     <div className="checkout-input-row">
-                                        <input type="text" placeholder="Nombres" required />
-                                        <input type="text" placeholder="Apellidos" required />
+                                        <input type="text" name="nombres" placeholder="Nombres" required />
+                                        <input type="text" name="apellidos" placeholder="Apellidos" required />
                                     </div>
 
-                                    <input type="text" placeholder="Dirección" required />
-                                    <input type="text" placeholder="Casa/apartamento" />
+                                    <input type="text" name="direccion" placeholder="Dirección" required />
+                                    <input type="text" name="complemento" placeholder="Casa/apartamento" />
 
                                     <div className="checkout-input-row">
-                                        <input type="text" placeholder="Ciudad" required />
-                                        <input type="text" placeholder="Provincia/estado" required />
+                                        <input type="text" name="ciudad" placeholder="Ciudad" required />
+                                        <input type="text" name="provincia" placeholder="Provincia/estado" required />
                                     </div>
 
                                     <div className="checkout-input-row">
-                                        <input type="tel" placeholder="Teléfono" required />
-                                        <input type="text" placeholder="Código postal" required />
+                                        <input type="tel" name="telefono" placeholder="Teléfono" required />
+                                        <input type="text" name="codigoPostal" placeholder="Código postal" required />
                                     </div>
 
                                     <h2 className="fuente-titulos checkout-shipping-title">
@@ -333,12 +371,6 @@ function FinalizarCompra() {
                             >
                                 PAGAR Y FINALIZAR
                             </button>
-
-                            {mensaje && (
-                                <p className="checkout-message fuente-texto" role="status">
-                                    {mensaje}
-                                </p>
-                            )}
 
                         </form>
                     </>
