@@ -172,7 +172,7 @@ function Comic() {
                 />
 
                 <p className="footer-slogan">
-                    ci
+                    Cada historia es una puerta hacia lo desconocido
                 </p>
 
                 <nav className="footer-socials" aria-label="Redes sociales">

@@ -403,7 +403,9 @@ function Merch() {
                     alt="Draugr Studio"
                 />
 
-                <p className="footer-slogan">ci</p>
+                <p className="footer-slogan">
+                    Cada historia es una puerta hacia lo desconocido
+                </p>
 
                 <nav className="footer-socials" aria-label="Redes sociales">
                     <a href="#instagram" aria-label="Instagram">

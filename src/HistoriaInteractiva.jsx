@@ -49,7 +49,7 @@ function HistoriaInteractiva() {
 
                     <a
                         className="historia-hero-button fuente-titulos"
-                        href={`${import.meta.env.BASE_URL}src/historia-interactiva.html`}
+                        href={`${import.meta.env.BASE_URL}historia/historia-interactiva.html`}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -152,7 +152,7 @@ function HistoriaInteractiva() {
                 />
 
                 <p className="footer-slogan">
-                    ci
+                    Cada historia es una puerta hacia lo desconocido
                 </p>
 
                 <nav className="footer-socials" aria-label="Redes sociales">
